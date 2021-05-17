@@ -1,0 +1,61 @@
+•    _Aprire PgAdmin_
+
+
+____________________________________________________________________________________________________________
+[Non loggato] – [tabella users]
+
+1.  Homepage 
+        •   breve descrizione sulle varie sezioni
+        •   Send Email
+        
+3.  Catalogo senza essere loggati
+        •   modal box, mostrare i dettagli del libro (autore ecc)
+        •   cliccare su "Save" e "Read" per mostrare la pagina di errore
+
+4.  Sign Up
+        •   mostrare la tabella "users"      
+        •   controllo sui campi (vari errori: email già esistente, username già esistente...)
+        •   controllo username --> *Codice*
+        •   far vedere che il Db è modificato
+
+5.  Far vedere che nella Home sono cambiati i pulsanti e fare il logout
+
+6.  Login
+        •    login che fallisce
+        •    login che riesce
+    
+7.  Cancellazione account --> mostrare che scompare l'account in tabella users
+
+
+____________________________________________________________________________________________________________
+[Loggato, account vuoto] - [tabella books, tabella usersbooks]
+
+8.  Catalogo
+        •    filtri (:Peter --> va bene sia per il titolo che per l'autore)
+        •    filtri autori da Db --> *Codice*
+        •    barra di ricerca (si esclude a vicenda con i filtri)
+        •    mostrare l'account vuoto in un'altra scheda
+        •    salvare un paio di libri
+        •    far vedere che salvare un libro già salvato dà errore
+        •    aprire un libro in lettura dal catalogo
+        •    far vedere modifica dei pulsanti del viewer per salvare e stampare libri
+        •    ricarica l'account nell'altra scheda per mostrare i libri aggiunti
+
+9.  Account
+        •    far vedere il Db (tabella usersbooks) per spiegare i vari valori delle pagine
+        •    si scorrono le due sezioni e si mostrano le modal box
+
+
+____________________________________________________________________________________________________________
+[Loggato, alcuni libri già presenti in lettura e salvati] - [tabella usersbooks]
+
+        •    prendere uno dei libri salvati e leggerlo --> far vedere che cambia sezione e che si riapre alla pagina a cui lo avevi chiuso --> *Codice?* (salvataggio num. pagina)
+        •    far vedere nel Db che le pagine si aggiornano
+        •    riaprire lo stesso libro e leggerlo fino all'ultima pagina
+        •    mostrare la pagina "libri finiti"
+        •    mostrare i pulsanti "rimuovi" e "leggi di nuovo"
+        •    pulsanti unsave e remove
+        •    mostrare i details (accennare gli errori se non si è loggati ecc.)
+        •    mostrare cambio password --> far vedere che con la password vecchia sbagliata non funziona
+        •    controlli sui campi password
+        •    far vedere nel Db che la password è cambiata

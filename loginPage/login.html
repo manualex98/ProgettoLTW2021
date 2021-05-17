@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <link rel='shortcut icon' type='image/x-icon' href='../icon.ico'/>
+        <link rel="stylesheet" href="../style.css" type="text/css">
+        <script type="text/javascript" lang="javascript" src="login.js"></script>
+    </head>
+    <body class="background">
+        <form action="login.php" class="box" style="height: 470px; margin-top:7%;" method="POST" name="loginForm" onSubmit="return validateForm();">
+            <img src="/loginPage/l-images/ancient-book.png" width="180" height="130">
+            <h1>Login</h1><br>
+            <input type="email" name="inputEmail" class="input" placeholder="Email address" required onchange="checkEmail();" autofocus/><br><br>
+            <input type="password" name="inputPassword" class="input" placeholder="Password" required/><br><br>
+            <br><br>
+            <button class="button" name="loginButton" type="submit">Login</button>
+        </form>
+    </body>
+</html>

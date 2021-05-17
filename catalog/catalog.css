@@ -1,0 +1,260 @@
+* {
+    font-family: "Playfair Display";
+    outline: none;
+}
+button {
+    background-color: rgb(255, 254, 254);
+    border: none;
+    cursor:pointer;
+}
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+    z-index: 3;
+}
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 450px;
+    border-radius: 0.5rem;
+}
+.modal-trigger {
+    display: inline-block;
+    width: 105px;
+    height: 175px;
+    font-family: Arial;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 1.2;
+    background-color: rgb(255, 255, 255);
+    border: 1px;
+    border-style: solid;
+    border-color: rgb(95, 95, 95);
+    padding: 15px 15px;
+    border-radius: 0.5rem;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+}
+.modal-trigger:hover {
+    background-color: rgb(241, 241, 241);
+}
+.close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+.close-button:hover {
+    background-color: darkgray;
+}
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+}
+
+.container-modal {
+    display: inline-block;
+    vertical-align: top;
+    padding-right: 1.5rem;
+}
+.title-modal {
+    font-family: Arial;
+    font-size: 18px;
+    font-weight: bold;
+}
+.author-modal {
+    font-family: Arial;
+    font-size: 15px;
+}
+.other-info-modal {
+    font-family: Arial;
+    font-size: 13px;
+    color: rgba(0, 0, 0, 0.5);
+}
+.buttons-modal {
+    position: fixed;
+    left: 50%;
+    bottom: 1.5rem;
+    width: 100%;
+}
+.button-modal {
+    display: inline-block;
+    padding-left: 6px;
+    padding-right: 6px;
+    margin-right: 16px;
+    font-size: 14px;
+    color: black;
+    border: 1px solid rgb(94, 94, 94);
+    border-radius: 10px;
+    background-color: rgb(255, 254, 254);
+    min-width: 10%;
+    height: 25px;
+    text-decoration: none!important;
+    text-align: center;
+}
+.button-modal:hover {
+    background-color: rgb(241, 241, 241);
+}
+
+.container {
+    min-height: 95%;
+    height: auto!important;
+    margin: 0 auto -50px;
+    margin-top: 3.5%;
+    width: 100%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.center-col {
+    width: 68%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top: 2.5%;
+}
+
+.left-col {
+    position: fixed;
+    top:7%;
+    width: 15%;
+    height: 100%;
+    left: 0%;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.658);
+    border-right: solid;
+    border-color: black;
+}
+
+.right-col {
+    position: fixed;
+    top:7%;
+    width: 15%;
+    height: 100%;
+    right: 0%;
+    left: 85%;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.658);
+    border-left: solid;
+    border-color: black;
+}
+
+.row-books {
+    margin: 0 auto;
+    padding-left: 12%;                                                          /* era 10% prima */
+    position: relative;
+} 
+
+.book {
+    position: relative;
+    display: inline-block;
+    vertical-align: bottom;
+    padding: 0px 10px;
+    z-index: 2;
+}
+.shelf {
+    align-content: center;
+    position: relative;
+    margin: auto;
+    margin-left: 1.5rem;
+    margin-right: 1.5rem;
+    padding-left: 10.6%;                                                     /* era 8.6% */
+    top: -1.5rem;
+    left: -2.8rem;
+    z-index: 1;
+}
+#catalog {
+    padding-bottom: 1.5rem;
+}
+
+select {
+    display: block;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 1.5px;
+    text-align: center;
+    padding-left: 10px;
+    width: 80%;
+    height: 25px;
+    box-sizing: border-box;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #aaa;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    border-radius: .5em;
+    -webkit-appearance: none;
+    background-image: url('https://www.clipartmax.com/png/middle/268-2684411_chevron-down-comments-select-arrow-white-icon.png'),
+      linear-gradient(to bottom, white 0%,rgb(236, 214, 189) 100%);
+    background-repeat: no-repeat, repeat;
+    /* arrow icon position (1em from the right, 50% vertical) , then gradient position*/
+    background-position: right .7em top 50%, 0 0;
+    /* icon size, then gradient */
+    background-size: .65em auto, 100%;
+}
+select:hover, .button-modal:hover {
+    border-color: #888;
+}
+select:focus, .searchTerm:focus, .searchButton:focus, .filterButton:focus, .button-modal:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.search {
+    width: 80%;
+    position: relative;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+.searchTerm {
+    font-size: 13px;
+    width: 100%;
+    border: 3px solid rgb(236, 214, 189);
+    border-right: none;
+    padding-left: 5px;
+    border-radius: 5px 0 0 5px;
+}
+.searchTerm:hover {
+    border-right: initial;
+    border-color: rgb(235, 200, 160);
+}
+.searchButton {
+    width: 40px;
+    height: 36px;
+    border: 1px solid rgb(236, 214, 189);
+    background-color: rgb(236, 214, 189);
+    background-image: url(c-images/search.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+}
+.searchButton:hover {
+    background-color:  rgb(235, 200, 160);
+}
+.filterButton {
+    font-size: 14px;
+    color: black;
+    border: 1px solid #aaa;
+    border-radius: 10px;
+    background-color: rgb(247, 240, 232);
+    width: 40%;
+    height: 25px;
+}
