@@ -5,7 +5,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Bookshell</title>
+    <title>BookMark</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel='shortcut icon' type='image/x-icon' href='../icon.ico'/>
@@ -47,7 +47,7 @@
     <!-- Navbar (sit on top) -->
     <div class="top">   
       <div class="bar padding" style="letter-spacing:4px;">    
-        <a href="#home" class="bar-item">Bookshell</a>
+        <a href="#home" class="bar-item">Bookmark</a>
         <!-- Right-sided navbar links -->
         <div class="right">
           <a href="#catalog" class="bar-item">Catalog</a>
@@ -69,7 +69,7 @@
 
     <!-- Header -->
     <header style="max-width:1600px; min-width:500px; position:relative; top:-25px;" id="home">
-      <img class="image" src="/homePage/h-images/bookshell.jpg" alt="Bookshell" width="1600" height="800"/>
+      <img class="image" src="/homePage/h-images/BookMark.jpg" alt="Bookshell" width="1600" height="800"/>
     </header>
 
     <!-- Page content -->
@@ -91,12 +91,12 @@
       </div>
       
       <hr>
-      
+
       <!-- About Us Section -->
       <div class="row padding-64" id="aboutUs">
         <div class="col padding-large">
           <h1 class="center">Developers</h1><br>
-          <h4 id="dev1">Federico Montanari</h4>
+          <h4 id="dev1">..</h4>
           <p class="text-grey">Computer engineering student, 23 years old, <a href="https://www.facebook.com/profile.php?id=100001714502494"><img src="h-images/facebook.png" class="social"></a>
              <br>Email: <a href="mailto:montanari.1762065@studenti.uniroma1.it">montanari.1762065@studenti.uniroma1.it</a></p><br>
         
