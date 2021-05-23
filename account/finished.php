@@ -48,7 +48,7 @@
 
         
         <?php
-            $dbconn = pg_connect("host=localhost port=5432 dbname=BookShell user=postgres password=anna") or die ('Could not connect: ' . pg_last_error());
+            $dbconn = pg_connect("host=localhost port=5432 dbname=Bookmark user=postgres password=postgres") or die ('Could not connect: ' . pg_last_error());
 
 			if (!(isset($_SESSION['username']))) {         //se questa pagina php non è stata chiamata dopo l'accesso all'account
 				header('Location: ../error.html');

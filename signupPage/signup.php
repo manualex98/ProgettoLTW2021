@@ -5,8 +5,8 @@
 	/* e quella richiamata invece da ajax, come se fossero due pagine diverse */
 	
 	/* Connessione al db: viene condivisa da entrambe le pagine */
-	$dbconn = pg_connect("host=localhost port=5432 dbname=BookShell user=postgres password=anna")
-                      or die ('Could not connect: ' . pg_last_error());
+	$dbconn = pg_connect("host=localhost port=5432 dbname=Bookmark user=postgres password=postgres")
+                      or die ('Could not connect: '.pg_last_error());
 					  
 	/* Handler per Ajax */
     if (isset($_POST['ajax'])) 

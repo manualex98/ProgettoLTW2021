@@ -5,7 +5,7 @@
         $url= $_SERVER['HTTP_REFERER'];
         $urlplus="http://localhost:3000/catalog/pdfjs/web/viewer.html?file=../../pdfs/";
         $pdf=str_replace($urlplus,"",$url);
-        $dbconn = pg_connect("host=localhost port=5432 dbname=BookShell user=postgres password=anna")
+        $dbconn = pg_connect("host=localhost port=5432 dbname=Bookmark user=postgres password=postgres")
         or die ('Could not connect: ' . pg_last_error());
         if(isset($_SESSION['username'])){
             $name = $_SESSION['username'];

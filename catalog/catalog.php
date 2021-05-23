@@ -68,7 +68,7 @@
                     <select size="1" name="author">
                         <option selected value="none">-
                         <?php
-                            $dbconn = pg_connect("host=localhost port=5432 dbname=BookShell user=postgres password=anna")
+                            $dbconn = pg_connect("host=localhost port=5432 dbname=Bookmark user=postgres password=postgres")
                                         or die ('Could not connect: ' . pg_last_error());
 
                             $query = "SELECT DISTINCT author FROM books";
@@ -119,7 +119,7 @@
 
         <!-- leggi la tabella books dal database e inizializza books_array -->
         <?php
-            $dbconn = pg_connect("host=localhost port=5432 dbname=BookShell user=postgres password=anna")
+            $dbconn = pg_connect("host=localhost port=5432 dbname=Bookmark user=postgres password=postgres")
             or die ('Could not connect: ' . pg_last_error());
 
             $query = "SELECT * FROM books";

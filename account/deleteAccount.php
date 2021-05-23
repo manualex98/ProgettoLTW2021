@@ -3,7 +3,7 @@
 
     if (isset($_SESSION['username'])) {
         $name = $_SESSION['username'];
-        $dbconn = pg_connect("host=localhost port=5432 dbname=BookShell user=postgres password=anna") 
+        $dbconn = pg_connect("host=localhost port=5432 dbname=Bookmark user=postgres password=postgres") 
         or die ('Could not connect: ' . pg_last_error());
         $q1 = "DELETE FROM usersbooks where name='$name'";
         $result = pg_query($q1) or die('Query failed: '. pg_last_error());

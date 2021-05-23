@@ -1,8 +1,8 @@
 <?php
     session_start();
 
-    if (!isset($_POST['loginButton'])) {
-        header("Location: ../homePage/homepage.php");
+    if (!isset($_POST['loginButton'])) {                 //Se non si viene indirizzati qui premendo 
+        header("Location: ../homePage/homepage.php");   //il bottone di login si viene reindirizzati alla homepage
     }
 
     else {
@@ -13,7 +13,7 @@
             header('Location: loginError.html');                            // se la psw non può esistere è inutile cercarla nel database
         }
         else {
-            $dbconn = pg_connect("host=localhost port=5432 dbname=BookShell user=postgres password=anna")
+            $dbconn = pg_connect("host=localhost port=5432 dbname=Bookmark user=postgres password=postgres")
                         or die ('Could not connect: ' . pg_last_error());
 
             $q1 = "SELECT * FROM users WHERE email = $1";

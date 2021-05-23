@@ -69,7 +69,7 @@
 
     <!-- Header -->
     <header style="max-width:1600px; min-width:500px; position:relative; top:-25px;" id="home">
-      <img class="image" src="/homePage/h-images/BookMark.jpg" alt="Bookshell" width="1600" height="800"/>
+      <img class="image" src="/homePage/h-images/BookMark.jpg" alt="Bookmark" width="1600" height="800"/>
     </header>
 
     <!-- Page content -->

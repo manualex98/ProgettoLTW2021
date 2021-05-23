@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-	$dbconn = pg_connect("host=localhost port=5432 dbname=BookShell user=postgres password=anna")
+	$dbconn = pg_connect("host=localhost port=5432 dbname=Bookmark user=postgres password=postgres")
                       or die ('Could not connect: ' . pg_last_error());
 					  
 	/* Handler per Ajax */

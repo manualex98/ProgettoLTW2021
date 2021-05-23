@@ -19,7 +19,7 @@
                     if (isset($_SESSION['username'])) {
                         $name = $_SESSION['username'];
                         echo "Hi $name, this book is already in your private  
-                        <a href='../account/account.php'><u>BookShell</u></a>!";
+                        <a href='../account/account.php'><u>Bookmark</u></a>!";
                     }
                 ?>
             </h1>
