@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Signup</title>
+        <meta name="viewport" content="width=device-width, initial−scale=1.0"></meta>
+        <meta charset="utf-8"></meta>
+        <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="../style.css"/>
+    </head>
+    <body class="background">
+        <!--Navbar-->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+            <!--Logo-->
+            <a class="navbar-brand" href="../homepage.html"><h5 class="navbarlogo">Bookmark</h5></a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarResponsive">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <span class="collapse navbar-collapse" id="navbarResponsive">
+                <!--Menù-->
+                <ul class="navbar-nav ml-auto">
+                    <li id="nav1" class="nav-item">
+                        <a class="nav-link" href="../homepage.html">Home</a>
+                    </li>
+                    <li id="nav2" class="nav-item">
+                        <a class="nav-link" href="../shop/shop.html">Shop</a>
+                    </li>
+                    <li id="nav3" class="nav-item">
+                        <a class="nav-link" href="../login/login.html">Login</a>
+                    </li>
+                    <li id="nav3" class="nav-item active">
+                        <a class="nav-link" href="../login/login.html">Signup</a>
+                    </li>
+                </ul>
+            </span>
+        </nav>
+        <!--Signup form-->
+        <br><br><br>
+        <form action="signup.php" class="box" style="margin-top:3%" method="post" name="signupForm">
+            <img src="../images/logo.png" width="180" height="144">
+            <h1>Sign Up</h1><br>
+            <input type="text" name="inputName" class="input" placeholder="Username" required onkeyup="checkUsername();" autofocus/><br><br>    <!--onkeyup fa un controllo ad ogni tasto premuto-->
+            <input type="email" name="inputEmail" class="input" placeholder="Email address" required onkeyup="checkEmail();"/><br><br>
+            <input type="email" name="inputEmailConfirm" class="input" placeholder="Confirm your email address" required onkeyup="checkEmailConf();"/><br><br>
+            <input type="password" name="inputPassword" class="input" placeholder="Password" required onkeyup="checkPassword();"/><br/><br>
+            <input type="password" name="inputPasswordConfirm" class="input" placeholder="Confirm your password" required onkeyup="checkPasswordConf();"/><br/>
+            <br><br>
+            <button class="btn btn-dark" name="signupButton" type="submit">Sign Up</button>
+        </form>
+        <!--Footer-->
+        <br><br><br><br><br><br><br><br>
+        <footer class="text-center text-lg-start bg-dark text-muted">
+            <br>
+            <p>  Powered by <a href="https://www.uniroma1.it/it/pagina-strutturale/home" title="LaSapienza" target="_blank">Università La Sapienza</a> – Linguaggi e Tecnologie per il Web</p>
+            <br>
+        </footer>
+    </body>
+</html>
