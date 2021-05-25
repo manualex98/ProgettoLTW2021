@@ -30,6 +30,26 @@
                 </ul>
             </span>
         </nav>
+        <br><br>
+    
+        <form action="shop.php" class="box_search" style="margin-top:3%" method="post" name="shopForm">
+            <input type="text" name="inputTitle" placeholder="Title" size="20" class="input_search" required autofocus>
+            <input type="text" name="inputAuthor" placeholder="Author" size="20" class="input_search">
+            <select size="1" class="custom-select-sm" name="inputGenre">
+                <option selected value="none">-
+                <option value="Romance">Romance
+                <option value="Adventure">Adventure
+                <option value="fantasy">Fantasy
+                <option value="Historical">Historical
+                <option value="Thriller">Thriller
+                <option value="Novel">Novel
+                <option value="Horror">Horror
+                <option value="Mystery">Mystery
+                <option value="Fiction">Fiction
+            </select>
+            
+            <input type="submit" name="searchButton" value="Search" class="input_search_button">
+        </form>
         <!--Footer-->
         <footer class="text-center text-lg-start bg-dark text-muted">
             <br>
