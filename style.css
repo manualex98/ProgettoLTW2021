@@ -1,7 +1,13 @@
-.slide{
-   font-family:'Times New Roman', Times, serif;
+p{
+    position:relative;
+    text-align: center;
 }
-
+.responsive{
+    position:relative; 
+    width: 100%; 
+    max-width: 400px; 
+    height: auto;
+}
 .background{
     background-image: url(images/Bookmark.jpg);
     background-size: cover;
@@ -18,12 +24,19 @@
     margin-top: 10%;
     line-height:initial;
 }
-
+.img_found{
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+}
 .box_search{
     background-color: rgba(247, 244, 244, 0.801);
     border-radius: 2px;
     width: 800px;
-    height: 1000px;
+    height: 80px;
+    text-align: center;
     position:relative;
     margin-left: auto;
     margin-right: auto;
