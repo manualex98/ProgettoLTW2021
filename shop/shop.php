@@ -68,11 +68,19 @@
                 else{
                     $ql="select img from books";
                     $result=pg_query($ql) or die('Query failed: '. pg_last_error());
+                    
+
                     while($line= pg_fetch_array($result, null, PGSQL_ASSOC)){
+                        echo "\t<div>\n" ;
                         foreach($line as $col_value) {
-                            echo  '<img class="img_found" src="../images/covers/'.$col_value.'">';
+                            $title = str_replace(" ","-",$title);
+                            $author = str_replace(" ","-",$author);
+                            echo "<a href=details.php?title=$title&author=$author&genre=$genre>
+                            <img class='img_found' src='../images/covers/".$col_value."'></a>";
                         }
+                        echo "\t</div>\n" ;
                     }
+                    
                     echo "<br><br>" ;
                 }
             }
