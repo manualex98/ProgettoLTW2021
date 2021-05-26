@@ -4,6 +4,12 @@ Database "Bookmark" su pgAdmin:
     -tabella "books" (name | author | genre | img)
     -tabella "hasBook" (library | book | quantity)
 
+CREATE TABLE users (
+    name text PRIMARY KEY,
+    email text,
+    password text,
+);
+
 CREATE TABLE libraries (
     name text PRIMARY KEY,
     email text,
@@ -36,6 +42,11 @@ INSERT INTO libraries(name,email,city,address) VALUES
 ('Libreria da Paolo', 'paolorossi@gmail.com','Venezia', 'Piazza San Marco');
 ('Anna Libri', 'anna@gmail.com','Bologna','Via del tortellino,5');
 
+INSERT INTO books(name, author, genre, img) VALUES
+('Dal big bang ai buchi neri', 'Stephen W. Hawking', 'Scientific', 'dalBigBangAiBuchiNeri.jpg');
+('La solitudine dei numeri primi', 'Paolo Giordano', 'Novel', 'laSolitudineDeiNumeriPrimi.jpg');
+('Le cronache di Narnia', 'C.S. Lewis', 'Fantasy', 'leCronacheDiNarnia.jpg');
+('Ventimila leghe sotto i mari', 'Jules Verne', 'Avventura', 'ventimilaLegheSottoIMari.jpg');
 
 
 //ALTER TABLE libraries ADD FOREIGN KEY (name) REFERENCES hasBook(library);

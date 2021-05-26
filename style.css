@@ -8,6 +8,15 @@ p{
     max-width: 400px; 
     height: auto;
 }
+
+.shop{
+    position: relative;
+    left: 10%;
+    transform: translate(-50%, 0);
+    -ms-transform: translate(-50%, 0);
+    -webkit-transform: translate(-50%, 0);
+}
+
 .background{
     background-image: url(images/Bookmark.jpg);
     background-size: cover;
@@ -21,9 +30,15 @@ p{
     position:relative;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 10%;
+    margin-top: 50%;
     line-height:initial;
 }
+
+.img{
+    width: 342px; 
+    height: 530px;
+}
+
 .img_found{
     position: relative;
     left: 50%;

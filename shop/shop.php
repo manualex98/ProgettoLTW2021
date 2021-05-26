@@ -1,14 +1,19 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>Bookmark</title>
         <meta name="viewport" content="width=device-width, initial−scale=1.0"></meta>
         <meta charset="utf-8"></meta>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
+        <script src="../bootstrap/js/bootstrap.min.js" type="text/javascript" lang="javascript"></script>
         <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css"/>
         <link rel="stylesheet" type="text/css" href="../style.css"/>
+        
     </head>
     <body>
         <!--Navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <nav class="navbar navbar-expand-md navbar-expand-lg navbar-dark bg-dark sticky-top">
             <!--Logo-->
             <a class="navbar-brand" href="../homepage.html"><h5 class="navbarlogo">Bookmark</h5></a>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarResponsive">
@@ -17,10 +22,10 @@
             <span class="collapse navbar-collapse" id="navbarResponsive">
                 <!--Menù-->
                 <ul class="navbar-nav ml-auto">
-                    <li id="nav1" class="nav-item">
+                    <li id="nav1" class="nav-item active">
                         <a class="nav-link" href="../homepage.html">Home</a>
                     </li>
-                    <li id="nav2" class="nav-item active">
+                    <li id="nav2" class="nav-item">
                         <a class="nav-link" href="#">Shop</a>
                     </li>
                     <li id="nav3" class="nav-item">
@@ -76,7 +81,7 @@
                             $title = str_replace(" ","-",$title);
                             $author = str_replace(" ","-",$author);
                             echo "<a href=details.php?title=$title&author=$author&genre=$genre>
-                            <img class='img_found' src='../images/covers/".$col_value."'></a>";
+                            <img class='img img_found' src='../images/covers/".$col_value."'></a>";
                         }
                         echo "\t</div>\n" ;
                     }
@@ -85,8 +90,20 @@
                 }
             }
             else{
-                echo "Inserire copertine";
+                $ql="select img from books";
+                    $result=pg_query($ql) or die('Query failed: '. pg_last_error());
+                    while($line= pg_fetch_array($result, null, PGSQL_ASSOC)){
+                    foreach($line as $col_value) {
+                        $title = str_replace(" ","-",$title);
+                        $author = str_replace(" ","-",$author);
+                        echo "<span class='shop'";
+                        echo "<a href=details.php?title=$title&author=$author&genre=$genre>
+                        <img class='img' src='../images/covers/".$col_value."'></a>";
+                        echo "</span>";
+                    }
+                }
             }
+            echo "<br><br><br>";
             
                 
             pg_free_result($result);
