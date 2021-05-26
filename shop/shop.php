@@ -71,18 +71,16 @@
                     echo "<br><h1> Sorry, this book doesn't exist</h1>";
                 }
                 else{
-                    $ql="select img from books";
+                    $ql="select * from books";
                     $result=pg_query($ql) or die('Query failed: '. pg_last_error());
-                    
-
                     while($line= pg_fetch_array($result, null, PGSQL_ASSOC)){
                         echo "\t<div>\n" ;
                         foreach($line as $col_value) {
                             $title = str_replace(" ","-",$title);
                             $author = str_replace(" ","-",$author);
-                            echo "<a href=details.php?title=$title&author=$author&genre=$genre>
-                            <img class='img img_found' src='../images/covers/".$col_value."'></a>";
                         }
+                        echo "<a href=details.php?title=$title&author=$author&genre=$genre>
+                            <img class='img img_found' src='../images/covers/".$line["img"]."'></a>";
                         echo "\t</div>\n" ;
                     }
                     
@@ -90,21 +88,18 @@
                 }
             }
             else{
-                $ql="select img from books";
+                echo "<span class='shop'>";
+                $ql="select * from books";
                     $result=pg_query($ql) or die('Query failed: '. pg_last_error());
                     while($line= pg_fetch_array($result, null, PGSQL_ASSOC)){
-                    foreach($line as $col_value) {
                         $title = str_replace(" ","-",$title);
                         $author = str_replace(" ","-",$author);
-                        echo "<span class='shop'";
-                        echo "<a href=details.php?title=$title&author=$author&genre=$genre>
-                        <img class='img' src='../images/covers/".$col_value."'></a>";
-                        echo "</span>";
-                    }
+                        echo "<a href=details.php?title=$title&author=$author>
+                        <img class='img' src='../images/covers/".$line["img"]."'></a>";       
                 }
+                echo "</span>";
             }
             echo "<br><br><br>";
-            
                 
             pg_free_result($result);
             pg_close($dbconn) ;
