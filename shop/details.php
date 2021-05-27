@@ -9,13 +9,14 @@
         <script src="../bootstrap/js/bootstrap.min.js" type="text/javascript" lang="javascript"></script>
         <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css"/>
         <link rel="stylesheet" type="text/css" href="../style.css"/>
-        
+        <script src="details.js" type="text/javascript" lang=javascript></script>
+
     </head>
     <body class='shop_background'>
         <!--Navbar-->
         <nav class="navbar navbar-expand-md navbar-expand-lg navbar-dark bg-dark sticky-top">
             <!--Logo-->
-            <a class="navbar-brand" href="../homepage.html"><h5 class="navbarlogo">Bookmark</h5></a>
+            <a class="navbar-brand" href="../homepage.php"><h5 class="navbarlogo">Bookmark</h5></a>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarResponsive">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -23,7 +24,7 @@
                 <!--Menù-->
                 <ul class="navbar-nav ml-auto">
                     <li id="nav1" class="nav-item active">
-                        <a class="nav-link" href="../homepage.html">Home</a>
+                        <a class="nav-link" href="../homepage.php">Home</a>
                     </li>
                     <li id="nav2" class="nav-item">
                         <a class="nav-link" href="#">Shop</a>
@@ -58,19 +59,19 @@
                 </div>
                 <div class='col-md-8'>
                     <br><br>
-                    <h3>$title </h3><h5>$author</h5><br>
-                    <h4>This book is available on these libraries:</h4>" ;
-                    echo "\t<table>\n" ;
+                    <h1 class='h1-w font-weight-bolder'>$title </h1><h5 class='h5-w font-weight-bolder'>$author</h5><br>
+                    <h4 class='h4-w font-weight-bolder' >This book is available on these libraries:</h4>" ;
+                    echo "\t<table class='table table-dark table-striped'>\n" ;
                     while($line= pg_fetch_array($result, null, PGSQL_ASSOC)){
                         echo "\t<tr><td>\n" ;
                         
-                        echo "\t\t".$line['library']."  placed in ".$line['city']. "  address ".$line['address']."<br>";
+                        echo "<h5 class='font-weight-bolder'>".$line['library']."  placed in ".$line['city']. "  address ".$line['address']."</h5><br>";
                         if($line['quantity']>0){
                             if($line['quantity']==1){
-                                echo "\t\t\nAvailability: <h5>".$line['quantity']."          LAST ONE AVAILABLE!!</h5> Price: <h4>" .$line['price']."€</h4>";
+                                echo "<h5 class='h5-w font-weight-bolder'>Availability: <h5>".$line['quantity']."</h5> <h4 class='h4-r font-weight-bolder'>LAST ONE AVAILABLE!!! </h4><h4 class='h4-w font-weight-bolder'>Price: " .$line['price']."€</h4>";
                             }
                             else{
-                                echo "\t\t\nAvailability: <h5>".$line['quantity']."</h5> Price: <h4>" .$line['price']."€</h4>";
+                                echo "<h5 class='h5-w font-weight-bolder'>Availability: </h5><h5>".$line['quantity']."</h5><h4 class='h4-w font-weight-bolder'>Price: " .$line['price']."€</h4>";
                             }
                             
                             

@@ -3,16 +3,43 @@ p{
     text-align: center;
 }
 
+.h5-w{
+    color:rgb(255, 255, 255);
+    text-align: center;
+    
+}
+
+.h3-w{
+    color:rgb(255, 255, 255);
+    text-align: center;
+}
+
+.h4-w{
+    color:rgb(255, 255, 255);
+    text-align: center;
+}
+
+.h4-r{
+    color:red;
+    text-align: center;
+}
+
+.h2-w{
+    color:rgb(255, 255, 255);
+    text-align: center;
+}
+
+.h1-w{
+    color:rgb(255, 255, 255);
+    text-align: center;
+}
+
 h5{
     color:rgb(255, 255, 255);
     text-align: center;
 }
 
 h4{
-    text-align: center;
-}
-
-h5{
     text-align: center;
 }
 
@@ -117,4 +144,45 @@ h3{
     border-radius: 4px;
     font-size: 16px;
     padding-left: 10px;
+}
+
+
+.dropbtn {
+    background-color: rgba(49, 40, 40, 0.801);
+    color: white;
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    color: black;
+    background-color: white;
+    min-width: 95px;
+    z-index: 1;
+    
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    color: black;
+    background-color: white;
+}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {
+    color: black;
+    background-color: white;
 }
