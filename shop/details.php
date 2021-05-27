@@ -65,8 +65,8 @@
                     echo "<img class='img img_found' src='../images/covers/".$img."'>
                 </div>
                 <div class='col-md-6'>
-
-                    <p>Inserire testo qui</p>
+                    <br><br>
+                    <h5>Inserire testo qui</h5>
                 </div>
             </div>
         </div>";

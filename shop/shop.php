@@ -7,6 +7,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
         <script src="../bootstrap/js/bootstrap.min.js" type="text/javascript" lang="javascript"></script>
+        <script src="shop.js" type="text/javascript" lang="javascript"></script>
         <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css"/>
         <link rel="stylesheet" type="text/css" href="../style.css"/>
         
