@@ -48,26 +48,37 @@
             $author = str_replace("-"," ",$author);
             $img = str_replace("-"," ",$img);
             
-            $ql="select * from books,hasbook,libraries where books.name=$1 and author=$2 and books.name=book and libraries.name=library";
-            $result=pg_query_params($dbconn,$ql,array($title,$author));
-
-            while($line= pg_fetch_array($result, null, PGSQL_ASSOC)){
-                echo "\t<div>\n";
-                foreach($line as $col_value) {
-                    echo $col_value;
-                }
-                echo "\t</div>\n";
-            }
-
-            echo "<div class='container'>
-            <div class='row text-center'>
-                <div class='col-md-6'>";
-                    echo "<img class='img img_found' src='../images/covers/".$img."'>
+            $ql="select * from hasbook,libraries where hasbook.book=$1 and libraries.name=library";
+            $result=pg_query_params($dbconn,$ql,array($title));
+            
+        echo "<div class='container'>
+            <div class='row text-left'>
+                <div class='col-md-4'>";
+                    echo "<img class='img img_found' src='../images/covers/".$img."' >
                 </div>
-                <div class='col-md-6'>
+                <div class='col-md-8'>
                     <br><br>
-                    <h5>Inserire testo qui</h5>
-                </div>
+                    <h3>$title </h3><h5>$author</h5><br>
+                    <h4>This book is available on these libraries:</h4>" ;
+                    echo "\t<table>\n" ;
+                    while($line= pg_fetch_array($result, null, PGSQL_ASSOC)){
+                        echo "\t<tr><td>\n" ;
+                        
+                        echo "\t\t".$line['library']."  placed in ".$line['city']. "  address ".$line['address']."<br>";
+                        if($line['quantity']>0){
+                            if($line['quantity']==1){
+                                echo "\t\t\nAvailability: <h5>".$line['quantity']."          LAST ONE AVAILABLE!!</h5> Price: <h4>" .$line['price']."€</h4>";
+                            }
+                            else{
+                                echo "\t\t\nAvailability: <h5>".$line['quantity']."</h5> Price: <h4>" .$line['price']."€</h4>";
+                            }
+                            
+                            
+                        }
+                        echo "</td>\t</tr>\n" ;
+                    }
+                    echo "\t</table>\n" ;
+                "</div>
             </div>
         </div>";
             
