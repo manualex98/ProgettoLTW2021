@@ -16,7 +16,7 @@
         <!--Navbar-->
         <nav class="navbar navbar-expand-md navbar-expand-lg navbar-dark bg-dark sticky-top">
             <!--Logo-->
-            <a class="navbar-brand" href="../homepage.html"><h5 class="navbarlogo">Bookmark</h5></a>
+            <a class="navbar-brand" href="../homepage.php"><h5 class="navbarlogo">Bookmark</h5></a>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarResponsive">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -24,7 +24,7 @@
                 <!--Menù-->
                 <ul class="navbar-nav ml-auto">
                     <li id="nav1" class="nav-item active">
-                        <a class="nav-link" href="../homepage.html">Home</a>
+                        <a class="nav-link" href="../homepage.php">Home</a>
                     </li>
                     <li id="nav2" class="nav-item">
                         <a class="nav-link" href="#">Shop</a>
