@@ -1,3 +1,6 @@
+<?php
+  session_start();
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -29,9 +32,24 @@
                     <li id="nav2" class="nav-item">
                         <a class="nav-link" href="#">Shop</a>
                     </li>
-                    <li id="nav3" class="nav-item">
-                        <a class="nav-link" href="../login/login.html">Login</a>
-                    </li>
+                    <?php 
+                        if(isset($_SESSION['username'])) {
+                          echo "<li id='nav4' class='nav-item'> 
+                          <div class='dropdown'>
+                            <button class='dropbtn '>Ciao, ".$_SESSION['username']."</button>
+                            <div class='dropdown-content'>
+                              <a href='info_user/account.html'>Account</a>
+                              <a href='logout.php'>Logout</a>
+                            </div>
+                          </div>
+                        </li>";
+                        }
+                        else{
+                          echo "<li id='nav3' class='nav-item'>
+                          <a class='nav-link' href='login/login.html'>Login</a>
+                          </li>";
+                        }
+                    ?>
                 </ul>
             </span>
         </nav>
