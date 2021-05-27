@@ -11,7 +11,7 @@
         <link rel="stylesheet" type="text/css" href="../style.css"/>
         
     </head>
-    <body>
+    <body class='shop_background'>
         <!--Navbar-->
         <nav class="navbar navbar-expand-md navbar-expand-lg navbar-dark bg-dark sticky-top">
             <!--Logo-->
@@ -34,12 +34,11 @@
                 </ul>
             </span>
         </nav>
-        <br><br>
         <!--Search form-->
-        <form action="shop.php" class="box_search" style="margin-top:3%" method="post" name="shopForm">
+        <form action="shop.php" class="box_search" style="margin-top:1%" method="post" name="shopForm">
             <input type="text" name="inputTitle" placeholder="Title" size="20" class="input_search" required autofocus>
             <input type="text" name="inputAuthor" placeholder="Author" size="20" class="input_search">
-            <select size="1" class="custom-select-sm" name="inputGenre">
+            <select size="1" class="custom-select-sm custom_select" name="inputGenre">
                 <option selected value="none">-
                 <option value="Romance">Romance
                 <option value="Adventure">Adventure
@@ -79,25 +78,29 @@
                             $title = str_replace(" ","-",$title);
                             $author = str_replace(" ","-",$author);
                         }
-                        echo "<a href=details.php?title=$title&author=$author&genre=$genre>
+                        echo "<a href=details.php?title=".$title."&author=".$author."&genre=".$genre."&img=".$line["img"].">
                             <img class='img img_found' src='../images/covers/".$line["img"]."'></a>";
-                        echo "\t</div>\n" ;
+                        echo "\t</div><br>\n" ;
                     }
                     
                     echo "<br><br>" ;
                 }
             }
             else{
-                echo "<span class='shop'>";
+
+                echo "<div class='container text-center'>";
+                echo "<div class='row'>";
                 $ql="select * from books";
                     $result=pg_query($ql) or die('Query failed: '. pg_last_error());
                     while($line= pg_fetch_array($result, null, PGSQL_ASSOC)){
-                        $title = str_replace(" ","-",$title);
-                        $author = str_replace(" ","-",$author);
-                        echo "<a href=details.php?title=$title&author=$author>
-                        <img class='img' src='../images/covers/".$line["img"]."'></a>";       
+                        $title = str_replace(" ","-",$line['name']);
+                        $author = str_replace(" ","-",$line['author']);
+                        echo "<div class='col-sm'>";
+                        echo "<a href=details.php?title=".$title."&author=".$author."&img=".$line["img"].">
+                        <img class='img' src='../images/covers/".$line["img"]."'></a>"; 
+                        echo "</div>";      
                 }
-                echo "</span>";
+                echo "</div></div>";
             }
             echo "<br><br><br>";
                 

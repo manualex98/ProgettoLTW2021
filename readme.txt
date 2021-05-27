@@ -46,7 +46,9 @@ INSERT INTO books(name, author, genre, img) VALUES
 ('Dal big bang ai buchi neri', 'Stephen W. Hawking', 'Scientific', 'dalBigBangAiBuchiNeri.jpg');
 ('La solitudine dei numeri primi', 'Paolo Giordano', 'Novel', 'laSolitudineDeiNumeriPrimi.jpg');
 ('Le cronache di Narnia', 'C.S. Lewis', 'Fantasy', 'leCronacheDiNarnia.jpg');
-('Ventimila leghe sotto i mari', 'Jules Verne', 'Avventura', 'ventimilaLegheSottoIMari.jpg');
+('Ventimila leghe sotto i mari', 'Jules Verne', 'Adventure', 'ventimilaLegheSottoIMari.jpg');
+('Guida galattica per gli autostoppisti', 'Douglas Adams', 'Fantasy', 'guidaGalatticaPerGliAutostoppisti.jpg');
+('Il metodo Warren Buffett. I segreti del più grande investitore del mondo', 'Robert G. Hamstrong', 'Scientific', 'ilMetodoWarrenBuffet.jpg');
 
 
 //ALTER TABLE libraries ADD FOREIGN KEY (name) REFERENCES hasBook(library);
