@@ -27,10 +27,10 @@
             <span class="collapse navbar-collapse" id="navbarResponsive">
                 <!--Menù-->
                 <ul class="navbar-nav ml-auto">
-                    <li id="nav1" class="nav-item active">
+                    <li id="nav1" class="nav-item">
                         <a class="nav-link" href="../homepage.php">Home</a>
                     </li>
-                    <li id="nav2" class="nav-item">
+                    <li id="nav2" class="nav-item active">
                         <a class="nav-link" href="shop.php">Shop</a>
                     </li>
                     <?php 
@@ -39,15 +39,15 @@
                           <div class='dropdown'>
                             <button class='dropbtn '>Ciao,".$_SESSION['username']."</button>
                             <div class='dropdown-content'>
-                              <a href='info_user/account.html'>Account</a>
-                              <a href='logout.php'>Logout</a>
+                              <a href='../info_user/account.html'>Account</a>
+                              <a href='../logout.php'>Logout</a>
                             </div>
                           </div>
                         </li>";
                         }
                         else{
                           echo "<li id='nav3' class='nav-item'>
-                          <a class='nav-link' href='login/login.html'>Login</a>
+                          <a class='nav-link' href='../login/login.html'>Login</a>
                           </li>";
                         }
                     ?>

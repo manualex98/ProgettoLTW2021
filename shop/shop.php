@@ -26,10 +26,10 @@ session_start();
             <span class="collapse navbar-collapse" id="navbarResponsive">
                 <!--Menù-->
                 <ul class="navbar-nav ml-auto">
-                    <li id="nav1" class="nav-item active">
+                    <li id="nav1" class="nav-item">
                         <a class="nav-link" href="../homepage.php">Home</a>
                     </li>
-                    <li id="nav2" class="nav-item">
+                    <li id="nav2" class="nav-item active">
                         <a class="nav-link" href="#">Shop</a>
                     </li>
                     <?php 
