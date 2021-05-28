@@ -7,6 +7,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
         <script src="../bootstrap/js/bootstrap.min.js" type="text/javascript" lang="javascript"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css"/>
         <link rel="stylesheet" type="text/css" href="../style.css"/>
         <script type="text/javascript" lan="javascript" src="login.js"></script>
@@ -41,7 +42,10 @@
             <img src="../images/logo.png" width="180" height="144">
             <h1>Login</h1><br>
             <input type="email" class="input" name="inputEmail" placeholder="Email address" required onsubmit="checkEmail();" autofocus/><br><br>
-            <input type="password" class="input" name="inputPassword" placeholder="Password" required/><br><br>
+            <input type="password" id="password1" class="input_pass" name="inputPassword" placeholder="Password" required/>
+            <button class="mycheckbox" type="button" name="ckbox" onclick="show1()">
+                <i id="icon" class="fa fa-eye-slash"></i>
+            </button><br><br>
             <p>Don't have an account? <a href="../signup/signup.html">Signup</a></p>
             <br>
             <button class="btn btn-dark" name="loginButton" type="submit">Login</button>
