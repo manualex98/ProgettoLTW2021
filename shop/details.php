@@ -10,11 +10,17 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
         <script src="../bootstrap/js/bootstrap.min.js" type="text/javascript" lang="javascript"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css"/>
         <link rel="stylesheet" type="text/css" href="../style.css"/>
-        <script src="details.js" type="text/javascript" lang=javascript></script>
-
+        <script src="details.js" type="text/javascript" lang="javascript"></script>
+        <script>
+            function aggiornaDB() {
+                aggiornaButton();
+            }
+        </script>
     </head>
+
     <body class='shop_background'>
         <!--Navbar-->
         <nav class="navbar navbar-expand-md navbar-expand-lg navbar-dark bg-dark sticky-top">
@@ -30,7 +36,7 @@
                         <a class="nav-link" href="../homepage.php">Home</a>
                     </li>
                     <li id="nav2" class="nav-item">
-                        <a class="nav-link" href="#">Shop</a>
+                        <a class="nav-link" href="shop.php">Shop</a>
                     </li>
                     <?php 
                         if(isset($_SESSION['username'])) {
@@ -77,8 +83,8 @@
                 </div>
                 <div class='col-md-8'>
                     <br><br>
-                    <h1 class='h1-w font-weight-bolder'>$title </h1><h5 class='h5-w font-weight-bolder'>$author</h5><br>
-                    <h4 class='h4-w font-weight-bolder' >This book is available on these libraries:</h4>" ;
+                    <h1 class='h1-w font-weight-bolder'>".$title."</h1><h5 class='h5-w font-weight-bolder'>".$author."</h5><br>
+                    <h4 class='h4-w font-weight-bolder' >This book is available on these libraries:</h4>";
                     echo "\t<table class='table table-dark table-striped'>\n" ;
                     while($line= pg_fetch_array($result, null, PGSQL_ASSOC)){
                         echo "\t<tr><td>\n" ;
@@ -97,11 +103,14 @@
                         echo "</td>\t</tr>\n" ;
                     }
                     echo "\t</table>\n" ;
-                "</div>
-            </div>
-        </div>";
-            
+                    echo "<p><button id='button' class='btn btn-outline-light' onClick='aggiornaDB()'>Add to favourites <i class='fa fa-heart-o'></i></button></p>";
+                echo "</div>";
+            echo "</div>";
+        echo "</div>";
+       
         
+
+            
             pg_free_result($result);
             pg_close($dbconn);
         ?>
