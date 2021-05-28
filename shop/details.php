@@ -14,11 +14,6 @@
         <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css"/>
         <link rel="stylesheet" type="text/css" href="../style.css"/>
         <script src="details.js" type="text/javascript" lang="javascript"></script>
-        <script>
-            function aggiornaDB() {
-                aggiornaButton();
-            }
-        </script>
     </head>
 
     <body class='shop_background'>

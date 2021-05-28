@@ -46,6 +46,23 @@
             <img class="img-fluid" src="images/Bookmark.jpg" alt="Bookshell"/>
         </header>
         
+        <?php
+        $dbconn= pg_connect("host=localhost port=5432 dbname=Bookmark user=postgres password=postgres")
+                or die('Could not connect:'. pg_last_error());
+
+        $name = $_POST['name'];
+        $title = $_POST['title'];
+
+        $q2="insert into users lovesbook ($1, $2)";
+        $data= pg_query_params($dbconn, $q2, array($name, $title));
+        if ($data){
+            echo "Dati salvati correttamente";
+        }
+        else{
+            echo "ERRORE";
+        }
+        ?>
+
         
         <!--Footer-->
         <footer class="text-center text-lg-start bg-dark text-muted">
