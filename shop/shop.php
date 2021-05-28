@@ -38,8 +38,8 @@ session_start();
                           <div class='dropdown'>
                             <button class='dropbtn '>Ciao, ".$_SESSION['username']."</button>
                             <div class='dropdown-content'>
-                              <a href='info_user/account.html'>Account</a>
-                              <a href='logout.php'>Logout</a>
+                              <a href='info_user/account.php'>Account</a>
+                              <a href='../logout.php'>Logout</a>
                             </div>
                           </div>
                         </li>";
