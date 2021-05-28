@@ -46,7 +46,7 @@ session_start();
                         }
                         else{
                           echo "<li id='nav3' class='nav-item'>
-                          <a class='nav-link' href='login/login.html'>Login</a>
+                          <a class='nav-link' href='../login/login.html'>Login</a>
                           </li>";
                         }
                     ?>

@@ -35,6 +35,11 @@ CREATE TABLE hasBook (
     FOREIGN KEY (book) REFERENCES books(name)
 );
 
+CREATE TABLE lovesbook (
+    username text PRIMARY KEY,
+    book text
+);
+
 INSERT INTO libraries(name,email,city,address) VALUES 
 ('laFeltrinelli','feltrinelli@gmail.com','Roma','Galleria Alberto Sordi'),
 ('Mondadori','mondadori@gmail.com','Roma','Piazza Cola di Rienzo, 81'),

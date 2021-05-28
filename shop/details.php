@@ -37,7 +37,7 @@
                         if(isset($_SESSION['username'])) {
                           echo "<li id='nav4' class='nav-item'> 
                           <div class='dropdown'>
-                            <button class='dropbtn '>Ciao, ".$_SESSION['username']."</button>
+                            <button class='dropbtn '>Ciao,".$_SESSION['username']."</button>
                             <div class='dropdown-content'>
                               <a href='info_user/account.html'>Account</a>
                               <a href='logout.php'>Logout</a>
@@ -98,7 +98,21 @@
                         echo "</td>\t</tr>\n" ;
                     }
                     echo "\t</table>\n" ;
-                    echo "<p><button id='button' class='btn btn-outline-light' onClick='aggiornaDB()'>Add to favourites <i class='fa fa-heart-o'></i></button></p>";
+                    //echo "<p><button id='button' class='btn btn-outline-light' onClick='aggiornaDB()'>Add to favourites <i class='fa fa-heart-o'></i></button></p>";
+                    
+                    $ql="select * from lovesbook where username=$1 and book=$2";
+                    $result=pg_query_params($dbconn,$ql,array($_SESSION['username'],$title));
+                    if($line= pg_fetch_array($result, null, PGSQL_ASSOC)){
+                        echo "<div class=text-center>
+                        <a href='insert_wishlist.php?username=".$_SESSION['username']."&book=$title&genre=$genre&author=$author&img=$img&action=r'><h6 class='h6-w font-weight-bolder'><i class='fa fa-heart-o fa-red'></i></a>Added to favourites</h6>
+                        </div> ";
+                    }
+                    else{
+                        echo "<div class=text-center>
+                        <a href='insert_wishlist.php?username=".$_SESSION['username']."&book=$title&genre=$genre&author=$author&img=$img&action=i'><h6 class='h6-w font-weight-bolder'><i class='fa fa-heart-o fa-white'></i></a>Add to favourites</h6>
+                        </div> ";
+                    }
+                    
                 echo "</div>";
             echo "</div>";
         echo "</div>";

@@ -3,7 +3,7 @@ function aggiornaDB() {
     $(document).ready(function() { 
         var name="$name";
         var title="$title";
-
+        
         //chiamata ajax 
         $.ajax({ 
             //imposto il tipo di invio dati  

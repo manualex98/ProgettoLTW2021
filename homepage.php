@@ -76,6 +76,7 @@
                 <div class="col-md-6">
                     <!--inserire testo affiancato all'immagine-->
                     <p>Inserire testo qui</p>
+                    
                 </div>
             </div>
         </div>
