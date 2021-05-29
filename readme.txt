@@ -65,3 +65,20 @@ INSERT INTO hasbook(library,book,quantity,price) VALUES
 ('Anna Libri','Le cronache di Narnia','2','19.99'),
 ('Libreria da Paolo','Ventimila leghe sotto i mari','10','9.99'),
 ('Mondadori','Guida galattica per gli autostoppisti','1','20.00');
+
+
+CREATE OR REPLACE FUNCTION update_user() RETURNS
+TRIGGER AS
+$$
+	DECLARE
+	r record;
+	BEGIN
+		FOR r IN SELECT * FROM lovesbook LOOP
+			UPDATE lovesbook SET username=NEW.name WHERE username=OLD.name;
+		END LOOP;
+		RETURN NULL;
+	END;
+$$ language plpgsql;
+	
+CREATE TRIGGER trigger aggiornamento AFTER UPDATE ON users
+FOR EACH ROW EXECUTE PROCEDURE update_user();
