@@ -97,6 +97,13 @@ h3{
     border-radius:10px;
 }
 
+.img-wishlist{
+    width: 150px; 
+    height: 300px;
+    margin-top: 10%;
+    border-radius:10px;
+}
+
 .img_found{
     position: relative;
     left: 50%;
