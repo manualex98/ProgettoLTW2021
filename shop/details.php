@@ -127,11 +127,35 @@
             pg_free_result($result);
             pg_close($dbconn);
         ?>
+        
+        <!--Qui visualizzo la trama-->
+        <button id="dettagli" onclick="caricaDocumento1()"> Altri dettagli </button>
+        <div id="zonaDinamica">
+        </div>
+
         <!--Footer-->
         <footer class="text-center text-lg-start bg-dark text-muted">
             <br>
             <p>  Powered by <a href="https://www.uniroma1.it/it/pagina-strutturale/home" title="LaSapienza" target="_blank">Università La Sapienza</a> – Linguaggi e Tecnologie per il Web</p>
             <br>
         </footer>
+
+        <div style="display:none" id="hiddentitle"><?php echo $_GET['title'];?></div>
+        
+        <!-- script alla fine così carica più in fretta-->
+        <script>
+        document.getElementById("dettagli").onclick=caricaDocumento1;
+        function caricaDocumento1(e) {
+          var httpRequest = new XMLHttpRequest();
+          httpRequest.onreadystatechange = gestisciResponse1;
+          httpRequest.open("GET","../trame/"+document.getElementById('hiddentitle').innerHTML+".html", true);
+          httpRequest.send();
+        }
+        function gestisciResponse1(e) {
+            if (e.target.readyState == XMLHttpRequest.DONE && e.target.status == 200) {
+                document.getElementById("zonaDinamica").innerHTML= e.target.responseText;
+            }
+        }
+        </script>
     </body>
 </html>
