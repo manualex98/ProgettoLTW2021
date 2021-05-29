@@ -10,6 +10,7 @@ session_start();
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
         <script src="../bootstrap/js/bootstrap.min.js" type="text/javascript" lang="javascript"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <script src="shop.js" type="text/javascript" lang="javascript"></script>
         <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css"/>
         <link rel="stylesheet" type="text/css" href="../style.css"/>
@@ -17,9 +18,9 @@ session_start();
     </head>
     <body class='shop_background'>
         <!--Navbar-->
-        <nav class="navbar navbar-expand-md navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <nav class="navbar navbar-expand-md navbar-expand-lg navbar-dark bg-dark">
             <!--Logo-->
-            <a class="navbar-brand" href="../homepage.php"><h5 class="navbarlogo">Bookmark</h5></a>
+            <a class="navbar-brand" href="../homepage.php"><h5 class="navbarlogo">BOOKMARK</h5></a>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarResponsive">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -27,32 +28,37 @@ session_start();
                 <!--Menù-->
                 <ul class="navbar-nav ml-auto">
                     <li id="nav1" class="nav-item">
-                        <a class="nav-link" href="../homepage.php">Home</a>
+                        <a class="nav-link" href="../homepage.php">HOME</a>
                     </li>
                     <li id="nav2" class="nav-item active">
-                        <a class="nav-link" href="#">Shop</a>
+                        <a class="nav-link" href="#">SHOP</a>
+                    </li>
+                    <li id="nav3" class="nav-item">
+                        <a class="nav-link" href="../faq/faq.php">FAQ</a>
                     </li>
                     <?php 
                         if(isset($_SESSION['username'])) {
-                          echo "<li id='nav4' class='nav-item'> 
-                          <div class='dropdown'>
-                            <button class='dropbtn '>Ciao, ".$_SESSION['username']."</button>
-                            <div class='dropdown-content'>
-                              <a href='info_user/account.php'>Account</a>
-                              <a href='../logout.php'>Logout</a>
+                            echo "<li class='nav-item dropdown'>
+                            <a class='nav-link dropdown-toggle' href='#' id='navbarDropdownMenuLink' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                            CIAO, ".$_SESSION['username']."
+                            </a>
+                            <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
+                              <a class='dropdown-item' href='../info_user/account.php'>Account</a>
+                              <div class='dropdown-divider'></div>
+                              <a class='dropdown-item' href='../logout.php'>Logout</a>
                             </div>
-                          </div>
-                        </li>";
-                        }
-                        else{
-                          echo "<li id='nav3' class='nav-item'>
-                          <a class='nav-link' href='../login/login.html'>Login</a>
-                          </li>";
+                          </li>"; 
+                          }
+                          else{
+                            echo "<li id='nav3' class='nav-item'>
+                            <a class='nav-link' href='../login/login.html'>LOGIN</a>
+                            </li>";
                         }
                     ?>
                 </ul>
             </span>
         </nav>
+
         <!--Search form-->
         <form action="shop.php" class="box_search" style="margin-top:1%" method="post" name="shopForm">
             <input type="text" name="inputTitle" placeholder="Title" size="20" class="input_search" required autofocus>
@@ -70,9 +76,9 @@ session_start();
                 <option value="Fiction">Fiction
                 <option value="Scientific">Scientific
             </select>
-            
-            <input type="submit" name="searchButton" value="Search" class="input_search_button">
+            <button type="submit" name="searchButton" class="btn btn-outline-light" data-toggle="button" aria-pressed="false">Search <i class='fa fa-search'></i></button>
         </form>
+
         <!--Sezione copertine-->
         <?php
             $dbconn= pg_connect("host=localhost port=5432 dbname=Bookmark user=postgres password=postgres")
@@ -92,7 +98,7 @@ session_start();
                     $ql="select img from books where name=$1 and author=$2 and genre=$3";
                     $result=pg_query_params($dbconn,$ql, array($title,$author,$genre));
                     while($line= pg_fetch_array($result, null, PGSQL_ASSOC)){
-                        echo "\t<div>\n" ;
+                        echo "<div>" ;
                         foreach($line as $col_value) {
                             $title = str_replace(" ","-",$title);
                             $author = str_replace(" ","-",$author);
@@ -100,10 +106,10 @@ session_start();
                             <img class='img img_found' src='../images/covers/".$col_value."'></a>";
                         }
                         //$line["img"]
-                        echo "\t</div><br>\n" ;
+                        echo "\t</div>\n" ;
                     }
                     
-                    echo "<br><br>" ;
+                    echo "<br>" ;
                 }
             }
             else{
