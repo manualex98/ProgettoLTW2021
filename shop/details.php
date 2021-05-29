@@ -7,6 +7,7 @@
         <title>Bookmark-Details</title>
         <meta name="viewport" content="width=device-width, initial−scale=1.0"></meta>
         <meta charset="utf-8"></meta>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script> 
         <script src="../bootstrap/js/bootstrap.min.js" type="text/javascript" lang="javascript"></script>
@@ -102,13 +103,12 @@
                         echo "</td>\t</tr>\n" ;
                     }
                     echo "\t</table>\n" ;
-                    //echo "<p><button id='button' class='btn btn-outline-light' onClick='aggiornaDB()'>Add to favourites <i class='fa fa-heart-o'></i></button></p>";
                     
                     $ql="select * from lovesbook where username=$1 and book=$2";
                     $result=pg_query_params($dbconn,$ql,array($_SESSION['username'],$title));
                     if($line= pg_fetch_array($result, null, PGSQL_ASSOC)){
                         echo "<div class=text-center>
-                        <a href='insert_wishlist.php?username=".$_SESSION['username']."&book=$title&genre=$genre&author=$author&img=$img&action=r'><h6 class='h6-w font-weight-bolder'><i class='fa fa-heart-o fa-red'></i></a>Added to favourites</h6>
+                        <a href='insert_wishlist.php?username=".$_SESSION['username']."&book=$title&genre=$genre&author=$author&img=$img&action=r'><h6 class='h6-w font-weight-bolder'><i class='fa fa-heart fa-red'></i></a>Added to favourites</h6>
                         </div> ";
                     }
                     else{

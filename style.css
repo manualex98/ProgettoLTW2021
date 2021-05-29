@@ -98,8 +98,8 @@ h3{
 }
 
 .img-wishlist{
-    width: 150px; 
-    height: 300px;
+    width: 120px; 
+    height: 180px;
     margin-top: 10%;
     border-radius:10px;
 }
@@ -142,14 +142,12 @@ h3{
 
 
 .change_button{
-    width: 35%;
+    width: 45%;
     height: 30px;
-    text-align: center;
     background-color: white;
     color: black;
     border-radius: 4px;
     font-size: 16px;
-    padding-left: 10px;
 }
 
 .input {
@@ -225,13 +223,17 @@ h3{
 }
 
 .fa-red {
-    color: red;
-    background-color: red;
+    color:rgb(196, 9, 9);
+    width: 30px;
+    height: 30px;
+    
 }
 
 .fa-white {
+    width: 30px;
+    height: 30px;
     color: white;
-    /*background-color: white;*/
+    
 }
 
 .nav-link{

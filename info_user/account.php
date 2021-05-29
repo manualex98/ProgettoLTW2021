@@ -31,7 +31,7 @@ session_start();
                         <a class="nav-link" href="../homepage.php">HOME</a>
                     </li>
                     <li id="nav2" class="nav-item active">
-                        <a class="nav-link" href="#">SHOP</a>
+                        <a class="nav-link" href="../shop/shop.php">SHOP</a>
                     </li>
                     <li id="nav3" class="nav-item">
                         <a class="nav-link" href="../faq/faq.php">FAQ</a>
@@ -43,7 +43,7 @@ session_start();
                             CIAO, ".$_SESSION['username']."
                             </a>
                             <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
-                              <a class='dropdown-item' href='../info_user/account.php'>Account</a>
+                              <a class='dropdown-item' href='#'>Account</a>
                               <div class='dropdown-divider'></div>
                               <a class='dropdown-item' href='../logout.php'>Logout</a>
                             </div>
@@ -77,7 +77,7 @@ session_start();
                     </td>
                     <td>
                         <?php
-                            echo "<input class='input_search' name='email' type='email' value='".$line['email']."'></input>";
+                            echo "<input class='input_search' name='email' size='40' type='email' value='".$line['email']."'></input>";
                         ?>
                     </td>
                     
