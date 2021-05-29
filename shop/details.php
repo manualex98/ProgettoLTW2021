@@ -20,7 +20,7 @@
         <!--Navbar-->
         <nav class="navbar navbar-expand-md navbar-expand-lg navbar-dark bg-dark sticky-top">
             <!--Logo-->
-            <a class="navbar-brand" href="../homepage.php"><h5 class="navbarlogo">Bookmark</h5></a>
+            <a class="navbar-brand" href="../homepage.php"><h5 class="navbarlogo">BOOKMARK</h5></a>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarResponsive">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -28,27 +28,31 @@
                 <!--Menù-->
                 <ul class="navbar-nav ml-auto">
                     <li id="nav1" class="nav-item">
-                        <a class="nav-link" href="../homepage.php">Home</a>
+                        <a class="nav-link" href="../homepage.php">HOME</a>
                     </li>
                     <li id="nav2" class="nav-item active">
-                        <a class="nav-link" href="shop.php">Shop</a>
+                        <a class="nav-link" href="shop.php">SHOP</a>
+                    </li>
+                    <li id="nav3" class="nav-item">
+                        <a class="nav-link" href="../faq/faq.php">FAQ</a>
                     </li>
                     <?php 
                         if(isset($_SESSION['username'])) {
-                          echo "<li id='nav4' class='nav-item'> 
-                          <div class='dropdown'>
-                            <button class='dropbtn '>Ciao,".$_SESSION['username']."</button>
-                            <div class='dropdown-content'>
-                              <a href='../info_user/account.html'>Account</a>
-                              <a href='../logout.php'>Logout</a>
+                            echo "<li class='nav-item dropdown'>
+                            <a class='nav-link dropdown-toggle' href='#' id='navbarDropdownMenuLink' role='button' data-toggle='dropdown' aria-haspopup='true' aria-expanded='false'>
+                            CIAO, ".$_SESSION['username']."
+                            </a>
+                            <div class='dropdown-menu' aria-labelledby='navbarDropdownMenuLink'>
+                              <a class='dropdown-item' href='../info_user/account.php'>Account</a>
+                              <div class='dropdown-divider'></div>
+                              <a class='dropdown-item' href='../logout.php'>Logout</a>
                             </div>
-                          </div>
-                        </li>";
-                        }
-                        else{
-                          echo "<li id='nav3' class='nav-item'>
-                          <a class='nav-link' href='../login/login.html'>Login</a>
-                          </li>";
+                          </li>"; 
+                          }
+                          else{
+                            echo "<li id='nav3' class='nav-item'>
+                            <a class='nav-link' href='../login/login.html'>LOGIN</a>
+                            </li>";
                         }
                     ?>
                 </ul>
@@ -123,5 +127,11 @@
             pg_free_result($result);
             pg_close($dbconn);
         ?>
+        <!--Footer-->
+        <footer class="text-center text-lg-start bg-dark text-muted">
+            <br>
+            <p>  Powered by <a href="https://www.uniroma1.it/it/pagina-strutturale/home" title="LaSapienza" target="_blank">Università La Sapienza</a> – Linguaggi e Tecnologie per il Web</p>
+            <br>
+        </footer>
     </body>
 </html>

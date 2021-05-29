@@ -114,7 +114,7 @@ h3{
 .box_search{
     background-color: rgba(247, 244, 244, 0);
     border-radius: 2px;
-    width: 800px;
+    
     height: 80px;
     text-align: center;
     position:relative;
@@ -124,29 +124,22 @@ h3{
     line-height:initial;
 }
 .input_search{
-    width: 40%;
-    height: 30px;
-    text-align: left;
-    background-color: rgba(255, 254, 254, 0.966);
-    border-radius: 4px;
-    font-size: 16px;
-    padding-left: 8px;
-}
-
-.custom_select{
-    background-color: rgba(255, 254, 254, 0.950);
-}
-
-.input_search_button{
-    width: 20%;
-    height: 30px;
-    text-align: center;
-    background-color: rgba(49, 40, 40, 0.801);
-    color: white;
+    width: 30%;
+    height: 37px;
+    background-color: rgba(247, 244, 244, 0.801);
     border-radius: 4px;
     font-size: 16px;
     padding-left: 10px;
+    text-align: left;
 }
+
+.custom_select{
+    background-color: rgba(247, 244, 244, 0.801);
+    height: 37px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
 
 .change_button{
     width: 35%;
@@ -239,5 +232,15 @@ h3{
 .fa-white {
     color: white;
     /*background-color: white;*/
+}
+
+.nav-link{
+    letter-spacing: 1px;
+    font-weight: bolder;
+}
+
+.navbarlogo{
+    letter-spacing: 1px;
+    font-weight: bolder;
 }
 
