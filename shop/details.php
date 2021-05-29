@@ -104,18 +104,21 @@
                     }
                     echo "\t</table>\n" ;
                     
-                    $ql="select * from lovesbook where username=$1 and book=$2";
-                    $result=pg_query_params($dbconn,$ql,array($_SESSION['username'],$title));
-                    if($line= pg_fetch_array($result, null, PGSQL_ASSOC)){
-                        echo "<div class=text-center>
-                        <a href='insert_wishlist.php?username=".$_SESSION['username']."&book=$title&genre=$genre&author=$author&img=$img&action=r'><h6 class='h6-w font-weight-bolder'><i class='fa fa-heart fa-red'></i></a>Added to favourites</h6>
-                        </div> ";
+                    if(isset($_SESSION['username'])){
+                        $ql="select * from lovesbook where username=$1 and book=$2";
+                        $result=pg_query_params($dbconn,$ql,array($_SESSION['username'],$title));
+                        if($line= pg_fetch_array($result, null, PGSQL_ASSOC)){
+                            echo "<div class=text-center>
+                            <a href='insert_wishlist.php?username=".$_SESSION['username']."&book=$title&genre=$genre&author=$author&img=$img&action=r'><h6 class='h6-w font-weight-bolder'><i class='fa fa-heart fa-red'></i></a>Added to favourites</h6>
+                            </div> ";
+                        }
+                        else{
+                            echo "<div class=text-center>
+                            <a href='insert_wishlist.php?username=".$_SESSION['username']."&book=$title&genre=$genre&author=$author&img=$img&action=i'><h6 class='h6-w font-weight-bolder'><i class='fa fa-heart-o fa-white'></i></a>Add to favourites</h6>
+                            </div> ";
+                        }
                     }
-                    else{
-                        echo "<div class=text-center>
-                        <a href='insert_wishlist.php?username=".$_SESSION['username']."&book=$title&genre=$genre&author=$author&img=$img&action=i'><h6 class='h6-w font-weight-bolder'><i class='fa fa-heart-o fa-white'></i></a>Add to favourites</h6>
-                        </div> ";
-                    }
+                    
                     
                 echo "</div>";
             echo "</div>";

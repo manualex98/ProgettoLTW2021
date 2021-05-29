@@ -126,16 +126,17 @@ session_start();
                     $result=pg_query_params($dbconn,$ql,array($_SESSION['username']));
                     if($line= pg_fetch_array($result, null, PGSQL_ASSOC)){
 
-                        echo "<tr>";
+                        
                         $result=pg_query_params($dbconn,$ql,array($_SESSION['username']));
                         while($line= pg_fetch_array($result, null, PGSQL_ASSOC)){
-
+                            echo "<tr>";
                             echo "<td><img class='img-wishlist img_found' src='../images/covers/".$line['img']."'></td>
                             <td><h5 class='h5-w font-weight-bolder'>".$line['book']."</h5></td>
                             <td><h6 class='h6-w font-weight-bolder'>".$line['author']."</h6></td>
                             <td><h6 class='h6-w font-weight-bolder'>".$line['genre']."</h6></td>";
+                            echo "</tr>";
                         }
-                        echo "</tr>";
+                        
                     }
                     else{
                         echo "<tr><h4 class='h4-w font-weight-bolder'>There aren't favourites yet...</h4></tr>";
