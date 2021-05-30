@@ -36,8 +36,9 @@ CREATE TABLE hasBook (
 );
 
 CREATE TABLE lovesbook (
-    username text PRIMARY KEY,
-    book text
+    username text,
+    book text,
+    primary key(username,book)
 );
 
 INSERT INTO libraries(name,email,city,address) VALUES 
