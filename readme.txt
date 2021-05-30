@@ -80,5 +80,5 @@ $$
 	END;
 $$ language plpgsql;
 	
-CREATE TRIGGER trigger aggiornamento AFTER UPDATE ON users
+CREATE TRIGGER trigger_aggiornamento AFTER UPDATE ON users
 FOR EACH ROW EXECUTE PROCEDURE update_user();

@@ -14,7 +14,8 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"/>
         <link rel="stylesheet" type="text/css" href="style.css"/>
-        
+        <script src="homepage.js" type="text/javascript" lang="javascript"></script>
+
     </head>
     <body>
         <!--Navbar-->
@@ -112,8 +113,15 @@
                 </div>
                 <div class="col-md-6">
                     <!--inserire testo affiancato all'immagine-->
-                    <p>Inserire testo qui</p>
-                    
+                    <br><br><br>
+                    <i class="fa fa-quote-left fa-3x fa-pull-left" aria-hidden="true"></i>
+                    <br>
+                    <span id="zonaDinamica">
+                    <p class="quote">I do believe something very magical can happen when you read a good book</p>
+                    <h4 style="font-weight: bold;">J.K. Rowling </h4>
+                </span>
+                    <i class="fa fa-quote-right fa-3x fa-pull-right" aria-hidden="true"></i><br><br><br>
+                    <button type="button" id="quotes" class="btn btn-dark" onclick=caricaCitazione();>Genera una citazione casuale</button>
                 </div>
             </div>
         </div>
@@ -143,5 +151,27 @@
             <p>  Powered by <a href="https://www.uniroma1.it/it/pagina-strutturale/home" title="LaSapienza" target="_blank">Università La Sapienza</a> – Linguaggi e Tecnologie per il Web</p>
             <br>
         </footer>
+
+        <script>
+        var i=1;
+        function caricaCitazione(e) {
+          var httpRequest = new XMLHttpRequest();
+          httpRequest.onreadystatechange = gestisciResponse;
+          httpRequest.open("GET","quotes/quote"+i+".html", true);
+          httpRequest.send();
+        }
+        function gestisciResponse(e) {
+            if (e.target.readyState == XMLHttpRequest.DONE && e.target.status == 200) {
+                document.getElementById("zonaDinamica").innerHTML= e.target.responseText;
+                if(i==5){
+                    i=1;
+                }
+                else{
+                    i++;
+                }
+            }
+        }
+        </script>
+
     </body>
 </html>

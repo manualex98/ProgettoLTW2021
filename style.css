@@ -59,6 +59,11 @@ h3{
     height: auto;
 }
 
+.quote{
+    font-size: 35px;
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 .shop{
     position: relative;
     left: 10%;
