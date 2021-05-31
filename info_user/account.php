@@ -77,7 +77,7 @@ session_start();
                     </td>
                     <td>
                         <?php
-                            echo "<input class='input_search' name='email' size='40' type='email' value='".$line['email']."'></input>";
+                            echo "<input class='input_change' name='email' size='40' type='email' value='".$line['email']."'></input>";
                         ?>
                     </td>
                     
@@ -91,7 +91,7 @@ session_start();
                     </td>
                     <td>
                         <?php
-                            echo "<input class='input_search' name='username' type='text' value='".$line['name']."'></input>";
+                            echo "<input class='input_change' name='username' type='text' value='".$line['name']."'></input>";
                         ?>
                     </td>
                     <td>
@@ -105,7 +105,7 @@ session_start();
                     <td>
                         <?php
                             $pass=md5($line['password']);
-                            echo "<input id='password1' name='password' class='input_search' type='password' value='".$pass."' onclick='clean()'></input>";
+                            echo "<input id='password1' name='password' class='input_change' type='password' value='".$pass."' onclick='clean()'></input>";
                         ?>
                         <button class="mycheckbox" type="button" id="ckbox" name="ckbox" onclick="show1()" disabled>
                             <i id="icon" class="fa fa-eye-slash"></i>
@@ -116,8 +116,9 @@ session_start();
                     </td>
                 </tr>
             </table>
-            
-            <h5 class='h5-w font-weight-bolder'>Your wishlist:</h5>
+        </form>
+
+            <h4 class='h4-w font-weight-bolder'>Your wishlist:</h4>
             <div class='container text-left'>
             <table class='table table-dark table-striped' >
                 
@@ -131,9 +132,9 @@ session_start();
                         while($line= pg_fetch_array($result, null, PGSQL_ASSOC)){
                             echo "<tr>";
                             echo "<td><img class='img-wishlist img_found' src='../images/covers/".$line['img']."'></td>
-                            <td><h5 class='h5-w font-weight-bolder'>".$line['book']."</h5></td>
-                            <td><h6 class='h6-w font-weight-bolder'>".$line['author']."</h6></td>
-                            <td><h6 class='h6-w font-weight-bolder'>".$line['genre']."</h6></td>";
+                            <td><h5 class='h5-w title-wishlist'>".$line['book']."</h5></td>
+                            <td><h5 class='h5-w author-wishlist'>".$line['author']."</h5></td>
+                            <td><h5 class='h5-w genre-wishlist'>".$line['genre']."</h5></td>";
                             echo "</tr>";
                         }
                         
@@ -145,9 +146,39 @@ session_start();
             </table>
 
             </div>
+
+
+            <h4 class='h4-w font-weight-bolder'>Le tue prenotazioni:</h4>
+            <div class='container text-left'>
+            <table class='table table-dark table-striped' >
+                
+                <?php
+                    $ql="select * from booking,books,libraries where username=$1 and book=books.name and libraries.name=library";
+                    $result=pg_query_params($dbconn,$ql,array($_SESSION['username']));
+                    if($line= pg_fetch_array($result, null, PGSQL_ASSOC)){
+
+                        
+                        $result=pg_query_params($dbconn,$ql,array($_SESSION['username']));
+                        while($line= pg_fetch_array($result, null, PGSQL_ASSOC)){
+                            echo "<tr>";
+                            echo "<td><img class='img-wishlist img_found' src='../images/covers/".$line['img']."'></td>
+                            <td><h5 class='h5-w book-item'>".$line['book']."</h5></td>
+                            <td><h5 class='h5-w book-item'>".$line['library']."</h5></td>
+                            <td><h5 class='h5-w book-item'>".$line['date']."</h5></td>";
+                            echo "</tr>";
+                        }
+                        
+                    }
+                    else{
+                        echo "<tr><h4 class='h4-w font-weight-bolder'>Non hai effettuato prenotazioni ancora</h4></tr>";
+                    }
+                ?>
+            </table>
+
+            </div>
             
 
-        </form>
+        
         
         <!--Footer-->
         <footer class="text-center text-lg-start bg-dark text-muted">

@@ -1,3 +1,40 @@
+.home-text1{
+    position: absolute;
+    text-align: center;
+    color: #eee;
+    font-family: fantasy;
+    padding:10px;       
+    top: 100px;
+    left: 10;
+    width: 100%;
+    size: 400%;
+    font-weight: 600;
+}
+.home-text2{
+    position: absolute;
+    text-align: left;
+    color: #eee;
+    font-family: fantasy;
+    padding:10px;       
+    top: 350px;
+    left: 10;
+    width: 100%;
+    size: 400%;
+    font-weight: 600;
+}
+.home-text3{
+    position: absolute;
+    text-align: right;
+    color: #eee;
+    font-family: fantasy;
+    padding:10px;       
+    top: 350px;
+    left: 10;
+    width: 100%;
+    size: 400%;
+    font-weight: 600;
+}
+
 p{
     position:relative;
     text-align: center;
@@ -145,6 +182,32 @@ h3{
     font-size: 14px;
 }
 
+/*ACCOUNT.PHP*/
+.title-wishlist{
+    margin-top: 20%;
+    font-weight: bolder;
+}
+
+.author-wishlist{
+    margin-top: 44%;
+    font-weight: bolder;
+}
+
+.genre-wishlist{
+    margin-top: 84%;
+    font-weight: bolder;
+}
+
+.input_change{
+    width: 30%;
+    height: 37px;
+    background-color: rgba(247, 244, 244, 0.801);
+    border-radius: 4px;
+    font-size: 16px;
+    align-content: center;
+    align-self: center;
+    text-align: center;
+}
 
 .change_button{
     width: 45%;
@@ -153,6 +216,12 @@ h3{
     color: black;
     border-radius: 4px;
     font-size: 16px;
+    text-align: center;
+    align-self: center;
+    position:relative;
+    margin-left: auto;
+    margin-right: auto;
+    line-height:initial;
 }
 
 .input {
@@ -251,3 +320,12 @@ h3{
     font-weight: bolder;
 }
 
+.book-button{
+    text-align: right;
+    margin-left: 80%;
+}
+
+.book-item{
+    margin-top: 80px;
+    font-weight: bolder;
+}

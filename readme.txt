@@ -41,6 +41,13 @@ CREATE TABLE lovesbook (
     primary key(username,book)
 );
 
+CREATE TABLE booking(
+    username text,
+    book text,
+    library text,
+    primary key(username,book,library)
+);
+
 INSERT INTO libraries(name,email,city,address) VALUES 
 ('laFeltrinelli','feltrinelli@gmail.com','Roma','Galleria Alberto Sordi'),
 ('Mondadori','mondadori@gmail.com','Roma','Piazza Cola di Rienzo, 81'),
@@ -76,6 +83,7 @@ $$
 	BEGIN
 		FOR r IN SELECT * FROM lovesbook LOOP
 			UPDATE lovesbook SET username=NEW.name WHERE username=OLD.name;
+			UPDATE booking SET username=NEW.name WHERE username=OLD.name;
 		END LOOP;
 		RETURN NULL;
 	END;

@@ -63,9 +63,15 @@
                 </ul>
             </span>
         </nav>
+
+
         <!--Header-->
-        <header style="max-width:1600px; min-width:500px; position:relative;" id="home">
+        <header style="max-width:1600px; min-width:500px; position:relative;" id="home" >
             <img class="img-fluid" src="images/Bookmark.jpg" alt="Bookshell"/>
+            <h1 class="home-text1">Benvenuto in Bookmark</h1>
+            <h2 class="home-text2">testo 2</h2>
+            <h2 class="home-text3">testo 3</h2>
+            
         </header>
         <hr>
 
@@ -138,7 +144,7 @@
                     <h3>Non riesci a trovare un libro? </h3>
                     <p>Scrivici per parlare con noi.</p>
                     <div class="calltoaction-right-panel text-center">
-                        <a href="mailto:example@example.com" class="btn btn-primary btn-lg" role="button">Contattaci ora!</a>
+                        <a href="mailto:bookmark.ltw@gmail.com" class="btn btn-primary btn-lg" role="button">Contattaci ora!</a>
                     </div>
                     <br>
                 </div>      

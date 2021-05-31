@@ -1,6 +1,6 @@
 <?php
 
-    $username = $_GET['username'];
+    $username = $_SESSION['username'];
     $book = $_GET['book'];
     $action = $_GET['action'];
     $author =$_GET['author'];
