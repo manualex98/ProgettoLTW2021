@@ -99,47 +99,18 @@ session_start();
               <div class="card-header" id="headingThree">
                 <h2 class="mb-0">
                   <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                    Domanda 3
+                    Non riesco a trovare un libro, come posso fare?
                   </button>
                 </h2>
               </div>
               <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
                 <div class="card-body">
-                  Risposta 3
+                  Mandaci un email all'indirizzo <a href="mailto:bookmark.ltw@gmail.com">bookmark.ltw@gmail.com</a> per suggerirci quali libri aggiungere al catalogo.
                 </div>
               </div>
             </div>
-            <div class="card">
-              <div class="card-header" id="headingFour">
-                <h2 class="mb-0">
-                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                    Domanda 4
-                  </button>
-                </h2>
-              </div>
-              <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
-                <div class="card-body">
-                  Risposta 4
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-header" id="headingFive">
-                <h2 class="mb-0">
-                  <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                    Domanda 5
-                  </button>
-                </h2>
-              </div>
-              <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
-                <div class="card-body">
-                  Risposta 5
-                </div>
-              </div>
-            </div>
-          </div>
       </ul>
-      <br><br>
+      <br><br><br><br><br><br><br><br><br><br><br><br>
       <!--Footer-->
       <footer class="text-center text-lg-start bg-dark text-muted">
             <br>
