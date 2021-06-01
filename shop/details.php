@@ -160,10 +160,11 @@
             pg_free_result($result);
             pg_close($dbconn);
         ?>
+        <br>
         
         <!--Qui visualizzo la trama-->
-        <button id="dettagli" onclick="caricaDocumento1()"> Altri dettagli </button>
-        <div id="zonaDinamica">
+        <button id="dettagli" style="margin-left:6.5%; margin-right: 6.5%;" onclick="caricaDocumento1()" class="btn btn-outline-light" data-toggle="button" aria-pressed="false"> Altri dettagli </button>
+        <div id="zonaDinamica" class="section clearfix" style="background-color: #343a40; margin-left:6.5%; margin-right:6.5%; text-align:left;">
         </div>
 
         <!--Footer-->
