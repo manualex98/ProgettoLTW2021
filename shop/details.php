@@ -108,10 +108,27 @@
                                     echo "<a href='booking.php?book=$title&library=".$line['library']."&genre=$genre&author=$author&img=$img&action=i'><button name='bookbutton' class='btn btn-outline-light book-button' data-toggle='button'>Prenota ora</button></a>";
                                 }
                             }
+                            else{
+                                echo "<button name='bookbutton' class='btn btn-outline-light book-button' data-toggle='button' disabled>Prenota ora</button>";
+                            }
                         }
                         else{
-                            echo "<h5 class='h5-w font-weight-bolder'>Availability: </h5><h5>TERMINATI</h5>";
-                            echo "<button name='bookbutton' class='btn btn-outline-light book-button' data-toggle='button' disabled>Prenota ora</button>";
+                            echo "<h5 class='h5-w font-weight-bolder'>Availability: <h5>".$line['quantity']."</h5> <h4 class='h4-r font-weight-bolder'>TERMINATI!!!</h4><h4 class='h4-w font-weight-bolder'>Price: " .$line['price']."€</h4>";
+                            if(isset($_SESSION['username'])){
+                                $query="select * from booking where username=$1 and book=$2 and library=$3";
+                                $risultato=pg_query_params($dbconn,$query,array($_SESSION['username'],$title,$line['library']));
+                                if($line_book= pg_fetch_array($risultato, null, PGSQL_ASSOC)){
+                                    echo "<a href='booking.php?book=$title&library=".$line['library']."&genre=$genre&author=$author&img=$img&action=r'><button name='bookbutton' class='btn btn-outline-light book-button' data-toggle='button'>Annulla</button></a>";
+                                }
+                                else{
+                                    echo "<button name='bookbutton' class='btn btn-outline-light book-button' data-toggle='button' disabled>Prenota ora</button>";
+                                }
+                            
+                            }
+                            else{
+                                echo "<button name='bookbutton' class='btn btn-outline-light book-button' data-toggle='button' disabled>Prenota ora</button>";
+                            }
+                            
                         }
                         echo "</td>\t</tr>\n" ;
                     }
