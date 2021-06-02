@@ -61,22 +61,22 @@ session_start();
 
         <!--Search form-->
         <form action="shop.php" class="box_search" style="margin-top:1%" method="post" name="shopForm">
-            <input type="text" name="inputTitle" placeholder="Title" size="20" class="input_search" required autofocus>
-            <input type="text" name="inputAuthor" placeholder="Author" size="20" class="input_search">
+            <input type="text" name="inputTitle" placeholder="Titolo" size="20" class="input_search" required autofocus>
+            <input type="text" name="inputAuthor" placeholder="Autore" size="20" class="input_search">
             <select size="1" class="custom-select-sm custom_select" name="inputGenre">
                 <option selected value="none">-
-                <option value="Romance">Romance
-                <option value="Adventure">Adventure
+                <option value="Romantico">Romantico
+                <option value="Avventura">Avventura
                 <option value="Fantasy">Fantasy
-                <option value="Historical">Historical
+                <option value="Storico">Storico
                 <option value="Thriller">Thriller
-                <option value="Novel">Novel
+                <option value="Romanzo">Romanzo
                 <option value="Horror">Horror
-                <option value="Mystery">Mystery
+                <option value="Mistero">Mistero
                 <option value="Fiction">Fiction
-                <option value="Scientific">Scientific
+                <option value="Scientifico">Scientifico
             </select>
-            <button type="submit" name="searchButton" class="btn btn-outline-light" data-toggle="button" aria-pressed="false">Search <i class='fa fa-search'></i></button>
+            <button type="submit" name="searchButton" class="btn btn-outline-light" data-toggle="button" aria-pressed="false">Cerca <i class='fa fa-search'></i></button>
         </form>
 
         <!--Sezione copertine-->
@@ -92,7 +92,7 @@ session_start();
 
             if ((isset($_POST['searchButton']))){
                 if(!($line= pg_fetch_array($result, null, PGSQL_ASSOC))){
-                    echo "<br><h1> Sorry, this book doesn't exist</h1>";
+                    echo "<br><h1> Peccato, questo libro non esiste...</h1>";
                 }
                 else{
                     $ql="select img from books where name=$1 and author=$2 and genre=$3";
@@ -105,7 +105,7 @@ session_start();
                             echo "<a href=details.php?title=".$title."&author=".$author."&genre=".$genre."&img=".$col_value.">
                             <img class='img img_found' src='../images/covers/".$col_value."'></a>";
                         }
-                        //$line["img"]
+                        
                         echo "\t</div>\n" ;
                     }
                     

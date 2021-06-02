@@ -84,18 +84,18 @@
                 <div class='col-md-8'>
                     <br><br>
                     <h1 class='h1-w font-weight-bolder'>".$title."</h1><h5 class='h5-w font-weight-bolder'>".$author."</h5><br>
-                    <h4 class='h4-w font-weight-bolder' >This book is available on these libraries:</h4>";
+                    <h4 class='h4-w font-weight-bolder' >Questo libro è disponibile in queste librerie:</h4>";
                     echo "\t<table class='table table-dark table-striped'>\n" ;
                     while($line= pg_fetch_array($result, null, PGSQL_ASSOC)){
                         echo "\t<tr><td>\n" ;
                         
-                        echo "<h5 class='font-weight-bolder'>".$line['library']."  placed in ".$line['city']. "  address ".$line['address']."</h5><br>";
+                        echo "<h5 class='font-weight-bolder'><b>".$line['library']."</b> situato in <b>".$line['city']. "</b>  in <b>".$line['address']."</b></h5><br>";
                         if($line['quantity']>0){
                             if($line['quantity']==1){
-                                echo "<h5 class='h5-w font-weight-bolder'>Availability: <h5>".$line['quantity']."</h5> <h4 class='h4-r font-weight-bolder'>LAST ONE AVAILABLE!!! </h4><h4 class='h4-w font-weight-bolder'>Price: " .$line['price']."€</h4>";
+                                echo "<h5 class='h5-w font-weight-bolder'>Disponibilità: <h5><b>".$line['quantity']."</b></h5> <h4 class='h4-r font-weight-bolder'>ULTIMO DISPONIBILE!!! </h4><h4 class='h4-w font-weight-bolder'>Prezzo: <b>" .$line['price']."€</b></h4>";
                             }
                             else{
-                                echo "<h5 class='h5-w font-weight-bolder'>Availability: </h5><h5>".$line['quantity']."</h5><h4 class='h4-w font-weight-bolder'>Price: " .$line['price']."€</h4>";
+                                echo "<h5 class='h5-w font-weight-bolder'>Disponibilità: </h5><h5><b>".$line['quantity']."</b></h5><h4 class='h4-w font-weight-bolder'>Prezzo: <b>" .$line['price']."€</b></h4>";
                             }
 
                             if(isset($_SESSION['username'])){
@@ -113,7 +113,7 @@
                             }
                         }
                         else{
-                            echo "<h5 class='h5-w font-weight-bolder'>Availability: <h5>".$line['quantity']."</h5> <h4 class='h4-r font-weight-bolder'>TERMINATI!!!</h4><h4 class='h4-w font-weight-bolder'>Price: " .$line['price']."€</h4>";
+                            echo "<h5 class='h5-w font-weight-bolder'>Disponibilità: <h5><b>".$line['quantity']."</b></h5> <h4 class='h4-r font-weight-bolder'>TERMINATI!!!</h4><h4 class='h4-w font-weight-bolder'>Prezzo: <b>" .$line['price']."€</b></h4>";
                             if(isset($_SESSION['username'])){
                                 $query="select * from booking where username=$1 and book=$2 and library=$3";
                                 $risultato=pg_query_params($dbconn,$query,array($_SESSION['username'],$title,$line['library']));
@@ -139,12 +139,12 @@
                         $result=pg_query_params($dbconn,$ql,array($_SESSION['username'],$title));
                         if($line= pg_fetch_array($result, null, PGSQL_ASSOC)){
                             echo "<div class=text-center>
-                            <a href='insert_wishlist.php?book=$title&genre=$genre&author=$author&img=$img&action=r'><h6 class='h6-w font-weight-bolder'><i class='fa fa-heart fa-red'></i></a>Added to favourites</h6>
+                            <a href='insert_wishlist.php?book=$title&genre=$genre&author=$author&img=$img&action=r'><h6 class='h6-w font-weight-bolder'><i class='fa fa-heart fa-red'></i></a>Aggiunto ai preferiti</h6>
                             </div> ";
                         }
                         else{
                             echo "<div class=text-center>
-                            <a href='insert_wishlist.php?book=$title&genre=$genre&author=$author&img=$img&action=i'><h6 class='h6-w font-weight-bolder'><i class='fa fa-heart-o fa-white'></i></a>Add to favourites</h6>
+                            <a href='insert_wishlist.php?book=$title&genre=$genre&author=$author&img=$img&action=i'><h6 class='h6-w font-weight-bolder'><i class='fa fa-heart-o fa-white'></i></a>Aggiungi ai preferiti</h6>
                             </div> ";
                         }
                     }

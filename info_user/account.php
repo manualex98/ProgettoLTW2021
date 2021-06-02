@@ -66,14 +66,14 @@ session_start();
             $result=pg_query_params($dbconn,$ql,array($_SESSION['username']));
             $line= pg_fetch_array($result, null, PGSQL_ASSOC);
         
-            echo "<h2 class='h2-w font-weight-bolder'>This is your account, ".$_SESSION['username']."</h2>";
+            echo "<h2 class='h2-w font-weight-bolder'>Il tuo profilo, ".$_SESSION['username']."</h2>";
         ?>
         <form action="changes.php" method="POST">
 
             <table class="table">
                 <tr>
                     <td>
-                        <b><h5 class="h5-w font-weight-bolder">Email address:</h5></b>
+                        <b><h5 class="h5-w font-weight-bolder">Indirizzo email:</h5></b>
                     </td>
                     <td>
                         <?php
@@ -82,7 +82,7 @@ session_start();
                     </td>
                     
                     <td>
-                        <input class="change_button" type="submit" name="subemail" value="Change">
+                        <input class="change_button" type="submit" name="subemail" value="Modifica">
                     </td>
                 </tr>
                 <tr>
@@ -95,7 +95,7 @@ session_start();
                         ?>
                     </td>
                     <td>
-                        <input class="change_button" type="submit" name="subuser" value="Change">
+                        <input class="change_button" type="submit" name="subuser" value="Modifica">
                     </td>
                 </tr>
                 <tr>
@@ -112,13 +112,13 @@ session_start();
                         </button>
                     </td>
                     <td>
-                        <input class="change_button" type="submit" name="subpass" value="Change">
+                        <input class="change_button" type="submit" name="subpass" value="Modifica">
                     </td>
                 </tr>
             </table>
         </form>
 
-            <h4 class='h4-w font-weight-bolder'>Your wishlist:</h4>
+            <h4 class='h4-w font-weight-bolder'>I tuoi preferiti:</h4>
             <div class='container text-left'>
             <table class='table table-dark table-striped' >
                 
