@@ -67,14 +67,7 @@
 
         <!--Header-->
         <header style="max-width:1600px; min-width:500px; position:relative;" id="home" >
-            <img class="img-fluid" src="images/Bookmark.jpg" alt="Bookshell"/>
-            <h1 class="home-text-center1">Benvenuto in Bookmark</h1>
-            <h3 class="home-text-left1">Il nostro sito nasce dalla necessità</h3>
-            <h3 class="home-text-left2">di avere tutto a portata di mano.</h3>
-            <h3 class="home-text-left3">Visita subito il nostro shop!</h3>
-            <h3 class="home-text-right1">Effettua il login per accedere</h3>
-            <h3 class="home-text-right2">a tutte </h3>
-            
+            <img class="img-fluid" src="images/Bookmark.jpg" alt="Bookshell"/>   
         </header>
         <hr>
 

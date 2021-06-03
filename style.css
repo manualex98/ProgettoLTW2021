@@ -1,72 +1,11 @@
 .home-text-center1{
-    position: absolute;
+    position: relative;
     text-align: center;
-    color: #eee;
+    color: rgb(0, 0, 0);
     font-family:Georgia, 'Times New Roman', Times, serif;
     font-weight: bolder;
-    padding:10px;       
-    top: 100px;
-    left: 10;
-    width: 100%;
-    size: 400%;
-    font-weight: 600;
-}
-.home-text-left1{
-    position: absolute;
-    text-align: left;
-    color: #eee;
-    font-weight: bolder;
-    padding:10px;       
-    top: 350px;
-    left: 10;
-    width: 100%;
-    size: 400%;
-    font-weight: 600;
-}
-.home-text-left2{
-    position: absolute;
-    text-align: left;
-    color: #eee;
-    font-weight: bolder;
-    padding:10px;       
-    top: 400px;
-    left: 10;
-    width: 100%;
-    size: 400%;
-    font-weight: 600;
-}
-.home-text-left3{
-    position: absolute;
-    text-align: left;
-    color: #eee;
-    font-weight: bolder;
-    padding:10px;       
-    top: 450px;
-    left: 10;
-    width: 100%;
-    size: 400%;
-    font-weight: 600;
-}
-.home-text-right1{
-    position: absolute;
-    text-align: right;
-    color: #eee;
-    font-weight: bolder;
-    padding:10px;       
-    top: 350px;
-    left: 10;
-    width: 100%;
-    size: 400%;
-    font-weight: 600;
-}
-
-.home-text-right2{
-    position: absolute;
-    text-align: right;
-    color: #eee;
-    font-weight: bolder;
-    padding:10px;       
-    top: 400px;
+    padding:8px;       
+    top: 10px;
     left: 10;
     width: 100%;
     size: 400%;

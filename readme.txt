@@ -7,18 +7,7 @@ Database "Bookmark" su pgAdmin:
 CREATE TABLE users (
     name text PRIMARY KEY,
     email text,
-    password text,
-);
-
-CREATE TABLE hasBook (
-    library text,
-    book text,
-    quantity int,
-    price float,
-
-    PRIMARY KEY(library,book),
-    FOREIGN KEY (library) REFERENCES libraries(name),
-    FOREIGN KEY (book) REFERENCES books(name)
+    password text
 );
 
 CREATE TABLE libraries (
@@ -35,6 +24,16 @@ CREATE TABLE books (
     img text
 );
 
+CREATE TABLE hasBook (
+    library text,
+    book text,
+    quantity int,
+    price float,
+
+    PRIMARY KEY(library,book),
+    FOREIGN KEY (library) REFERENCES libraries(name),
+    FOREIGN KEY (book) REFERENCES books(name)
+);
 
 
 CREATE TABLE lovesbook (
@@ -47,6 +46,7 @@ CREATE TABLE booking(
     username text,
     book text,
     library text,
+    date text,
     primary key(username,book,library)
 );
 

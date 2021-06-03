@@ -82,7 +82,7 @@ session_start();
                     </td>
                     
                     <td>
-                        <input class="change_button" type="submit" name="subemail" value="Modifica">
+                        <input class="btn btn-light" type="submit" name="subemail" value="Modifica">
                     </td>
                 </tr>
                 <tr>
@@ -95,7 +95,7 @@ session_start();
                         ?>
                     </td>
                     <td>
-                        <input class="change_button" type="submit" name="subuser" value="Modifica">
+                        <input class="btn btn-light" type="submit" name="subuser" value="Modifica">
                     </td>
                 </tr>
                 <tr>
@@ -112,7 +112,7 @@ session_start();
                         </button>
                     </td>
                     <td>
-                        <input class="change_button" type="submit" name="subpass" value="Modifica">
+                        <input class="btn btn-light" type="submit" name="subpass" value="Modifica">
                     </td>
                 </tr>
             </table>
