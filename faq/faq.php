@@ -53,7 +53,7 @@ session_start();
                         }
                         else{
                           echo "<li id='nav3' class='nav-item'>
-                          <a class='nav-link' href='login/login.html'>LOGIN</a>
+                          <a class='nav-link' href='../login/login.html'>LOGIN</a>
                           </li>";
                         }
                     ?>
