@@ -10,6 +10,17 @@ CREATE TABLE users (
     password text,
 );
 
+CREATE TABLE hasBook (
+    library text,
+    book text,
+    quantity int,
+    price float,
+
+    PRIMARY KEY(library,book),
+    FOREIGN KEY (library) REFERENCES libraries(name),
+    FOREIGN KEY (book) REFERENCES books(name)
+);
+
 CREATE TABLE libraries (
     name text PRIMARY KEY,
     email text,
@@ -24,16 +35,7 @@ CREATE TABLE books (
     img text
 );
 
-CREATE TABLE hasBook (
-    library text,
-    book text,
-    quantity int,
-    price float,
 
-    PRIMARY KEY(library,book),
-    FOREIGN KEY (library) REFERENCES libraries(name),
-    FOREIGN KEY (book) REFERENCES books(name)
-);
 
 CREATE TABLE lovesbook (
     username text,
