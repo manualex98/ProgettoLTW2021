@@ -108,6 +108,8 @@
                             if(isset($_SESSION['username'])){
                                 $query="select * from booking where username=$1 and book=$2 and library=$3";
                                 $risultato=pg_query_params($dbconn,$query,array($_SESSION['username'],$title,$line['library']));
+
+                                //se il libro è già prenotato metto il bottone 'annulla' sennò il 'prenota'
                                 if($line_book= pg_fetch_array($risultato, null, PGSQL_ASSOC)){
                                     echo "<a href='booking.php?book=$title&library=".$line['library']."&genre=$genre&author=$author&img=$img&action=r'><button name='bookbutton' class='btn btn-outline-light book-button' data-toggle='button'>Annulla</button></a>";
                                 }
@@ -124,6 +126,8 @@
                             if(isset($_SESSION['username'])){
                                 $query="select * from booking where username=$1 and book=$2 and library=$3";
                                 $risultato=pg_query_params($dbconn,$query,array($_SESSION['username'],$title,$line['library']));
+                                
+                                //se il libro è già prenotato metto il bottone 'annulla' sennò il 'prenota'
                                 if($line_book= pg_fetch_array($risultato, null, PGSQL_ASSOC)){
                                     echo "<a href='booking.php?book=$title&library=".$line['library']."&genre=$genre&author=$author&img=$img&action=r'><button name='bookbutton' class='btn btn-outline-light book-button' data-toggle='button'>Annulla</button></a>";
                                 }
