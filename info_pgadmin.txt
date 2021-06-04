@@ -3,6 +3,8 @@ Database "Bookmark" su pgAdmin:
     -tabella "libraries" (name | email | city | address) 
     -tabella "books" (name | author | genre | img)
     -tabella "hasBook" (library | book | quantity)
+    -tabella "booking" (username | book | library | date)
+    -tabella "lovesbook" (username | book)
 
 CREATE TABLE users (
     name text PRIMARY KEY,
