@@ -69,13 +69,14 @@
                 or die('Could not connect:'. pg_last_error());
 
             
-            $title = str_replace("-"," ",$title);
-            $author = str_replace("-"," ",$author);
+            $title = str_replace("-"," ",$title);        //sostituisco i trattini con gli spazi
+            $author = str_replace("-"," ",$author);     
             $img = str_replace("-"," ",$img);
             
             $ql="select * from hasbook,libraries where hasbook.book=$1 and libraries.name=library";
             $result=pg_query_params($dbconn,$ql,array($title));
-            
+        
+            //header pagina con foto,titolo e autore
         echo "<div class='container'>
             <div class='row text-left'>
                 <div class='col-md-4'>";
@@ -85,11 +86,17 @@
                     <br><br>
                     <h1 class='h1-w font-weight-bolder'>".$title."</h1><h5 class='h5-w font-weight-bolder'>".$author."</h5><br>
                     <h4 class='h4-w font-weight-bolder' >Questo libro è disponibile in queste librerie:</h4>";
+                    
+                    //tabella per la lista li librerie
                     echo "\t<table class='table table-dark table-striped'>\n" ;
                     while($line= pg_fetch_array($result, null, PGSQL_ASSOC)){
                         echo "\t<tr><td>\n" ;
                         
                         echo "<h5 class='font-weight-bolder'><b>".$line['library']."</b> situato in <b>".$line['city']. "</b>  in <b>".$line['address']."</b></h5><br>";
+                        
+                        //controllo della quantità dei libri per far visualizzare frasi particolari
+                        //se l'utente non ha effettuato il login visualizzerà le stesse cose di un
+                        //utente registrato ma col bottone prenota disabilitato
                         if($line['quantity']>0){
                             if($line['quantity']==1){
                                 echo "<h5 class='h5-w font-weight-bolder'>Disponibilità: <h5><b>".$line['quantity']."</b></h5> <h4 class='h4-r font-weight-bolder'>ULTIMO DISPONIBILE!!! </h4><h4 class='h4-w font-weight-bolder'>Prezzo: <b>" .$line['price']."€</b></h4>";
@@ -134,6 +141,8 @@
                     }
                     echo "\t</table>\n" ;
                     
+
+                    //se l'utente ha effettuato il login appare il bottone dei preferiti
                     if(isset($_SESSION['username'])){
                         $ql="select * from lovesbook where username=$1 and book=$2";
                         $result=pg_query_params($dbconn,$ql,array($_SESSION['username'],$title));

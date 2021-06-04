@@ -104,8 +104,8 @@ session_start();
                     </td>
                     <td>
                         <?php
-                            $pass=md5($line['password']);
-                            echo "<input id='password1' name='password' class='input_change' type='password' value='".$pass."' onclick='clean()'></input>";
+                        
+                            echo "<input id='password1' name='password' class='input_change' type='password' value='".$line['password']."' onclick='clean()'></input>";
                         ?>
                         <button class="mycheckbox" type="button" id="ckbox" name="ckbox" onclick="show1()" disabled>
                             <i id="icon" class="fa fa-eye-slash"></i>
@@ -140,7 +140,7 @@ session_start();
                         
                     }
                     else{
-                        echo "<tr><h4 class='h4-w font-weight-bolder'>There aren't favourites yet...</h4></tr>";
+                        echo "<tr><h4 class='h4-w font-weight-bolder'>Non hai alcun preferito...</h4></tr>";
                     }
                 ?>
             </table>

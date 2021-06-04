@@ -14,10 +14,13 @@
     $img = $_GET['img'];
     $username = $_SESSION['username'];
 
+    //se l'azione è 'i' faccio la prenotazione
     if($action=='i'){
         $ql = 'insert into booking(username,book,library,date) values ($1,$2,$3,$4)';
         $data= pg_query_params($dbconn, $ql, array($username, $book,$library,$today));
         if ($data){
+
+            //e aggiorno la quantità di libri
 
             $ql = 'update hasbook set quantity=quantity-1 where book=$1 and library=$2';
             $data= pg_query_params($dbconn, $ql, array($book,$library));
@@ -27,11 +30,14 @@
             echo "Error occured while booking";
         }
     }
+
+    //se l'azione è 'r' faccio la prenotazione
     else if($action=='r'){
         $ql="delete from booking where username=$1 and book=$2 and library=$3";
         $data= pg_query_params($dbconn, $ql, array($username, $book,$library));
         if ($data){
 
+            //e aggiorno la quantità di libri
             $ql = 'update hasbook set quantity=quantity+1 where book=$1 and library=$2';
             $data= pg_query_params($dbconn, $ql, array($book,$library));
             header("Location: details.php?title=".$book."&author=".$author."&genre=".$genre."&img=".$img."");
